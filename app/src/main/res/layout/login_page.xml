@@ -1,124 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@color/dark_blue"
-    android:gravity="center"
-    android:padding="10dp">
+    android:background="@color/transparent"
+    android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash"
+        android:alpha="0.2"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="#DFDFDF"
-        app:cardCornerRadius="20dp">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="250dp"
+            android:fontFamily="@font/league"
+            android:letterSpacing=".1"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_heading_below"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/for_easy_fast_and_secure_login"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+        <!-- Outlined EditText -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutMobileNumberAndEmailId"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/enter_user_id"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mobile_number"
+                style="@style/MyEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/my_email"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/enter_user_id"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:passwordToggleTint="@color/white"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="15sp"
+                android:text="@string/my_password"
+                android:letterSpacing=".3"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/btn_login"
+            style="@style/NeumorphicViewStyle"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/iv_horse"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/jumping_horse" />
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/league"
-                android:letterSpacing=".1"
-                android:text="@string/login"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="6dp"
-                android:fontFamily="@font/font_demo"
-                android:letterSpacing=".1"
-                android:text="@string/come_back_with_your_id"
-                android:textColor="@color/dark_blue"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tv_heading_below"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/for_easy_fast_and_secure_login"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
-
-            <EditText
-                android:id="@+id/et_mobile_number"
-                style="@style/NeumorphicViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="20dp"
-                android:drawableStart="@drawable/baseline_person_24"
-                android:hint="@string/enter_user_id"
-                android:inputType="number"
-                android:drawablePadding="10dp"
-                android:textSize="15sp"
-                android:maxLength="10"
-                android:paddingHorizontal="15dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
-
-            <EditText
-                android:id="@+id/et_password"
-                style="@style/NeumorphicViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:drawablePadding="10dp"
-                android:layout_marginRight="20dp"
-                android:drawableStart="@drawable/baseline_lock_24"
-                android:hint="@string/enter_password"
-                android:inputType="textPassword"
-                android:maxLength="10"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="15sp"
-                android:paddingHorizontal="15dp"
-                android:textColorHint="@color/white" />
-
-            <TextView
-                android:id="@+id/btn_login"
-                style="@style/NeumorphicViewStyle"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Login"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-            <TextView
+                android:id="@+id/tv_forget_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppins_semi_bold"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/forget_password"
                 android:textSize="14sp" />
 
@@ -126,42 +131,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:text="OR"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:text="@string/or"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tv_not_a_member"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/not_a_member"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_sign_up"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/tv_not_a_member"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="@string/sign_up"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/sign_up"
+                android:textColor="@color/dark_red"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
 
 
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

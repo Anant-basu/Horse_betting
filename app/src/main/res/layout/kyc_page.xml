@@ -1,130 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/dark_blue"
-    android:padding="10dp">
+    android:layout_gravity="center"
+    android:background="@color/transparent">
 
-    <androidx.cardview.widget.CardView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_cardview"
-        app:cardCornerRadius="10dp"
-        android:elevation="15dp"
-        >
+        android:layout_height="match_parent"
+        android:src="@drawable/splash"
+        android:layout_gravity="center"
+        android:alpha="0.2"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/bg_cardview"
-            android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity=""
+        android:padding="10dp"
+        android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/font_demo"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/kyc_information"
-                android:textColor="@color/white"
-                android:textSize="35sp"
+                android:textColor="@color/black"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/aadhar_number"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAadharNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/enter_aadhar_number"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_aadhar_number"
+                style="@style/MyEditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="@string/enter_aadhar_number"
-                android:layout_margin="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_medium"
-                android:paddingHorizontal="15sp"
-                style="@style/NeumorphicViewStyleRegistration"
-                android:inputType="number" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/pan_number"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPanNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/pan_number"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pan_number"
+                style="@style/MyEditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:textColorHint="@color/black"
-                android:hint="@string/enter_pan_number"
-                android:textSize="15sp"
-                android:paddingHorizontal="20dp"
-                android:fontFamily="@font/poppins_medium"
-                style="@style/NeumorphicViewStyleRegistration"
-                android:inputType="text" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Account Number"
-                android:textColor="@color/white"
-                android:layout_marginStart="10dp"
-                android:textSize="15sp" />
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAccountNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/pan_number"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_account_number"
+                style="@style/MyEditTextStyle"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                style="@style/NeumorphicViewStyleRegistration"
-                android:textColorHint="@color/black"
-                android:hint="@string/enter_account_number"
-                android:paddingHorizontal="20dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_medium"
-                android:inputType="number" />
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/date_of_birth"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="45dp"
-                android:layout_margin="10dp"
-                android:textColorHint="@color/black"
-                android:hint="Date-of-Birth"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_medium"
-                style="@style/NeumorphicViewStyleRegistration"
-                android:gravity="center"
-                android:textColor="@color/black" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutDOB"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/d_o_b"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_d_o_b"
+                style="@style/MyEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_medium"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/btn_continue"
+                style="@style/NeumorphicViewStyle"
                 android:layout_width="300dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
@@ -132,11 +137,7 @@
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
-                style="@style/NeumorphicViewStyleRegistration"
-                android:text="Continue"
-                android:textColor="@color/black" />
+                android:text="@string/Continue"
+                android:textColor="@color/white" />
         </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+</FrameLayout>

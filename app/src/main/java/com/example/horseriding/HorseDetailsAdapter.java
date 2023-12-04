@@ -21,7 +21,6 @@ public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapte
         this.context = context;
         this.horseDetailsList = horseDetailsList;
     }
-
     @NonNull
     @Override
     public HorseDetailsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,7 +29,6 @@ public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapte
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
-
     @Override
     public void onBindViewHolder(@NonNull HorseDetailsAdapter.ViewHolder holder, int position) {
 
@@ -40,19 +38,14 @@ public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapte
         holder.horseHeight.setText(horseDetails.getHorseHeight());
         holder.horseWeight.setText(horseDetails.getHorseWeight());
         holder.horseDescription.setText(horseDetails.getHorseDescription());
-
     }
-
     @Override
     public int getItemCount() {
         return horseDetailsList.size();
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder{
-
         private ImageView horseImage;
         private TextView horseName,horseHeight,horseWeight,horseDescription;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             horseImage=itemView.findViewById(R.id.iv_horse);
@@ -60,8 +53,6 @@ public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapte
             horseHeight=itemView.findViewById(R.id.tv_horse_height);
             horseWeight=itemView.findViewById(R.id.tv_horse_weight);
             horseDescription=itemView.findViewById(R.id.tv_description);
-
         }
     }
-
 }

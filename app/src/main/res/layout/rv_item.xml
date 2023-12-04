@@ -3,114 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="4dp">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="13sp"
-        >
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/iv_horse"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_card_view"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/iv_horse"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/round_shape"
-                    android:src="@drawable/jumping_horse" />
-                <TextView
-                    android:id="@+id/tv_horse_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="19dp"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="@string/horse_name"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_shape"
+            android:contentDescription="@string/description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/jumping_horse_dark_blue" />
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/tv_horse_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/horse_name"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/horse_weight"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/tv_horse_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="@string/_300_kg"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Horse Height : - "
-                    android:textColor="@color/dark_blue"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_horse_height"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/poppins_semi_bold"
-                    android:text="8.4ft "
-                    android:textColor="@color/dark_blue"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
 
             <TextView
-                android:id="@+id/tv_description"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="2dp"
+                android:layout_alignParentStart="true"
                 android:fontFamily="@font/poppins_medium"
-                android:maxLines="2"
-                android:text="Description"
+                android:text="@string/horse_weight"
                 android:textColor="@color/black"
-                android:textSize="13dp" />
+                android:textSize="15sp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_horse_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/_300_kg"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
+        </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@color/white">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/horse_height"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_horse_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/eight_ft"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/description"
+            android:textColor="@color/dark_pink"
+            android:textSize="13sp" />
+    </LinearLayout>
 </LinearLayout>

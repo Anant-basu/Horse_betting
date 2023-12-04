@@ -1,42 +1,116 @@
 package com.example.horseriding;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import java.util.List;
+import java.util.Objects;
+
 public class LoginPage extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tvSignUP,btnLogin;
-
+    private TextView tvSignUP, btnLogin, tvForgetPass;
+    private UserDatabase userDatabase;
+    private UserDao dao;
+    private EditText userID, userPassword,etChangePassword,etConfirmPassword;
+    String userId, password,changePassword,confirmPassword;
+    BottomSheetDialog dialog;
+    User userData;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor myEdit;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-
         initComponents();
-
     }
+    private void initComponents() {
+        this.tvSignUP = findViewById(R.id.tv_sign_up);
+        this.btnLogin = findViewById(R.id.btn_login);
+        this.userID = findViewById(R.id.et_mobile_number);
+        this.userPassword = findViewById(R.id.et_password_login);
+        this.tvForgetPass = findViewById(R.id.tv_forget_pass);
 
-    private void initComponents(){
-        this.tvSignUP =findViewById(R.id.tv_sign_up);
-        this.btnLogin=findViewById(R.id.btn_login);
+        sharedPreferences = getSharedPreferences("prefs",MODE_PRIVATE);
+        myEdit = sharedPreferences.edit();
+
+        userDatabase = UserDatabase.getInstance(this);
+        dao = userDatabase.getDao();
+        dialog = new BottomSheetDialog(this);
 
         this.tvSignUP.setOnClickListener(this::onClick);
         this.btnLogin.setOnClickListener(this::onClick);
+        this.tvForgetPass.setOnClickListener(this::onClick);
     }
-
     @Override
     public void onClick(View v) {
-        if (v.getId()==R.id.tv_sign_up){
-            Intent intent=new Intent(LoginPage.this, SignUPPage.class);
+        if (v.getId() == R.id.tv_sign_up) {
+            Intent intent = new Intent(LoginPage.this, SignUPPage.class);
             startActivity(intent);
-        } else if (v.getId()==R.id.btn_login) {
-            Intent intent=new Intent(LoginPage.this, KYCPage.class);
-            startActivity(intent);
+        } else if (v.getId() == R.id.btn_login) {
+            userId = userID.getText().toString();
+            password = userPassword.getText().toString();
+            User user = dao.login(userId, password);
+            if (checkFields()) {
+                if (user != null && Objects.equals(user.getUserID(), userId) && Objects.equals(user.getUserPassword(), password)) {
+                    Intent intent = new Intent(LoginPage.this, KYCPage.class);
+                    myEdit.putString("user_id",userId);
+                    myEdit.commit();
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "wrong credentials.", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Enter valid credential", Toast.LENGTH_SHORT).show();
+            }
+        } else if (v.getId() == R.id.tv_forget_pass) {
+            showBottomSheet();
         }
     }
+    private boolean checkFields() {
+        if (userID.getText().toString().length() == 0 || userPassword.getText().toString().length() == 0) {
+            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+    private void showBottomSheet() {
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null, false);
+        etChangePassword = view.findViewById(R.id.et_change_password);
+        etConfirmPassword = view.findViewById(R.id.et_confirm_password);
+        TextView btnChange = view.findViewById(R.id.tv_change_password);
+
+        btnChange.setOnClickListener(v -> {
+            if (!etChangePassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
+                Toast.makeText(LoginPage.this, "check your password", Toast.LENGTH_SHORT).show();
+            } else {
+                List<User> userList = dao.getAllData();
+                if (userList.size() != 0) {
+                    for (int i = 0; i < userList.size(); i++) {
+                        if (userID.equals(userList.get(i).getUserID()) && password.equals(userList.get(i).getUserPassword())) {
+                            userList.get(i).setUserPassword(etConfirmPassword.getText().toString());
+                            dao.resetPassword(userId, etConfirmPassword.getText().toString());
+                        }
+                    }
+                }
+                dialog.dismiss();
+                Toast.makeText(this, "Your password is successfully changed.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.setContentView(view);
+        dialog.setCancelable(true);
+        dialog.show();
+        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+    }
+
 }

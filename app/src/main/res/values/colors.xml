@@ -8,6 +8,11 @@
     <color name="deep_light_pink">#FAF5F7</color>
     <color name="light_cream">#FFFFE6</color>
     <color name="dark_blue">#006080</color>
+    <color name="dark_pink">#DC143C</color>
+    <color name="deep_blue">#001F3F</color>
+    <color name="test_color">#E74C3C</color>
+    <color name="slack_colors">#4A154B</color>
+    <color name="transparent">#80000000</color>
 
 
 </resources>
