@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Horse Riding</string>
+    <string name="horse_name">Horse Name</string>
+    <string name="horse_weight">Horse Weight : -</string>
+    <string name="_300_kg">300 kg</string>
+    <string name="come_back_with_your_id">Come back with your ID</string>
+    <string name="for_easy_fast_and_secure_login">For easy , fast and secure login</string>
+    <string name="login">LOGIN</string>
+    <string name="forget_password">Forget password ?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="not_a_member">Not a member ?</string>
+    <string name="aadhar_number">Aadhar Number</string>
+    <string name="pan_number">Pan Number</string>
+    <string name="enter_aadhar_number">Enter Aadhar number</string>
+    <string name="enter_pan_number">Enter Pan Number</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="enter_account_number">Enter Account Number</string>
+    <string name="kyc_information">KYC Information</string>
+    <string name="enter_user_id">Enter User ID</string>
+    <string name="enter_password">Enter Password</string>
+</resources>

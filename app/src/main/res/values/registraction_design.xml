@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- res/values/styles.xml -->
+    <style name="NeumorphicViewStyleRegistration">
+        <item name="android:background">@drawable/neumorphic_kyc_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!-- Add more styling attributes as needed -->
+    </style>
+</resources>
