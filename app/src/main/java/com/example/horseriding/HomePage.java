@@ -79,7 +79,6 @@ public class HomePage extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
-
             if (id == R.id.home) {
                 item.setIcon(R.drawable.home_white);
                 item.setTitle("home");
