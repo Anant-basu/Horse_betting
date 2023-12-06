@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.modal;
 public class HorseDetails {
     private String horseName;
     private int horseImage;

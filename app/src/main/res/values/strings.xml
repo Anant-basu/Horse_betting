@@ -18,7 +18,7 @@
     <string name="kyc_information">KYC Information</string>
     <string name="enter_user_id">Enter User ID</string>
     <string name="enter_password">Enter Password</string>
-    <string name="first_name">First Name</string>
+    <string name="first_name">First Name : </string>
     <string name="welcome_to_horse_riding_app">WelCome to Horse Riding App</string>
     <string name="enter_text">Enter text</string>
     <string name="or">OR</string>
@@ -29,10 +29,10 @@
     <string name="description">Description</string>
     <string name="eight_ft">8.4ft</string>
     <string name="Continue">Continue</string>
-    <string name="location">Location</string>
+    <string name="location">Location : </string>
     <string name="Password">Password</string>
     <string name="email_address">Email Address</string>
-    <string name="last_name">Last Name </string>
+    <string name="last_name">Last Name : </string>
     <string name="my_password">12345678</string>
     <string name="my_email">basuanant59@gmail.com</string>
     <string name="account_number">Account Number</string>
@@ -40,6 +40,14 @@
     <string name="you_have_already_account">You have already account?</string>
     <string name="change_your_password">Change Your Password</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="my_account">My Account</string>
+    <string name="user_first_name">User First Name</string>
+    <string name="user_last_name">User Last Name</string>
+    <string name="user_mobile_number">User Mobile Number</string>
+    <string name="other_information">Other Information</string>
+    <string name="user_location">User Location</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="personal_information">Personal Information</string>
 
 
 </resources>

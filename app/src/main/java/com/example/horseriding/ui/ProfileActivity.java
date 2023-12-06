@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,11 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.horseriding.R;
+import com.example.horseriding.modal.User;
+import com.example.horseriding.dao.UserDao;
+import com.example.horseriding.database.UserDatabase;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -76,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             photoPickerIntent.setType("image/*");
             startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
         } else if (v.getId()==R.id.tv_profile_edit_button) {
-            Intent intent=new Intent(this, ProfileEdit.class);
+            Intent intent=new Intent(this, ProfileEditActivity.class);
             startActivity(intent);
         }
     }

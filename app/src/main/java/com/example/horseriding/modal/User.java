@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.modal;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

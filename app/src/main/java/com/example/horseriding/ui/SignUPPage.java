@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.horseriding.R;
+import com.example.horseriding.modal.User;
+import com.example.horseriding.dao.UserDao;
+import com.example.horseriding.database.UserDatabase;
 
 public class SignUPPage extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.horseriding.modal.HorseDetails;
+import com.example.horseriding.adapter.HorseDetailsAdapter;
+import com.example.horseriding.adapter.ImageSliderAdapter;
+import com.example.horseriding.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;

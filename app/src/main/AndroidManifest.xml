@@ -36,7 +36,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,27 +45,27 @@
         </activity>
 
         <activity
-            android:name=".LoginPage"
+            android:name=".ui.LoginPage"
             android:exported="true" />
 
         <activity
-            android:name=".SignUPPage"
+            android:name=".ui.SignUPPage"
             android:exported="true" />
 
         <activity
-            android:name=".KYCPage"
+            android:name=".ui.KYCPage"
             android:exported="true" />
         <activity
-            android:name=".HomePage"
+            android:name=".ui.HomePage"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".ForgetPasswordActivity"
+            android:name=".ui.ForgetPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileEdit"
+            android:name=".ui.ProfileEditActivity"
             android:exported="true" />
 
     </application>

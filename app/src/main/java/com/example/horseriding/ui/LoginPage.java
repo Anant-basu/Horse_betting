@@ -1,10 +1,9 @@
-package com.example.horseriding;
+package com.example.horseriding.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,9 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.horseriding.R;
+import com.example.horseriding.modal.User;
+import com.example.horseriding.dao.UserDao;
+import com.example.horseriding.database.UserDatabase;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import java.util.List;
 import java.util.Objects;
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener {

@@ -1,7 +1,9 @@
-package com.example.horseriding;
+package com.example.horseriding.dao;
 
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.horseriding.modal.User;
 
 import java.util.List;
 

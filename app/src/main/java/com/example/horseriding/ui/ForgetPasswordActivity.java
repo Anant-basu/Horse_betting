@@ -1,4 +1,4 @@
-package com.example.horseriding;
+package com.example.horseriding.ui;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.horseriding.R;
+import com.example.horseriding.modal.User;
+import com.example.horseriding.dao.UserDao;
+import com.example.horseriding.database.UserDatabase;
 
 import java.util.List;
 
