@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/left_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Edit Profile"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textSize="18sp"
+            android:textColor="#5B7F81"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="#5B7F81"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Personal Information"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="User First Name"/>
+
+    <EditText
+        android:id="@+id/et_user_first_name"
+        android:layout_width="match_parent"
+        android:hint="User First name"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_textview_second"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="User Last Name"/>
+
+    <EditText
+        android:id="@+id/et_user_last_name"
+        android:layout_width="match_parent"
+        android:hint="User Last name"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_textview_second"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="User Mobile Number"/>
+
+    <EditText
+        android:id="@+id/et_user_mobile_number"
+        android:layout_width="match_parent"
+        android:hint="User Mobile number"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_textview_second"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="User Id"/>
+
+    <EditText
+        android:id="@+id/et_user_id"
+        android:layout_width="match_parent"
+        android:hint="User Id"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_textview_second"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Other Information"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="User Location"/>
+
+    <EditText
+        android:id="@+id/et_user_location"
+        android:layout_width="match_parent"
+        android:hint="User Location"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="15dp"
+        android:textSize="14sp"
+        android:background="@drawable/bg_textview_second"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:id="@+id/btn_save_changes"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_view"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="Save Changes"
+        android:textColor="#424343"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_textview_second"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="Cancel"
+        android:textColor="#424343"
+        android:textSize="15sp" />
+
+</LinearLayout>

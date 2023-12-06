@@ -15,15 +15,18 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
 
     private UserDatabase userDatabase;
     private UserDao dao;
-    private TextView btnContinue;
+    private TextView btnContinue, tvLogin;
     private EditText etFirstName, etLastName, etMobileNumber, etPassword, etLocation, etUserID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_page);
+
         initComponent();
+
     }
+
     private void initComponent() {
         this.btnContinue = findViewById(R.id.btn_continue);
         this.etFirstName = findViewById(R.id.et_first_name);
@@ -32,11 +35,16 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
         this.etPassword = findViewById(R.id.et_password);
         this.etLocation = findViewById(R.id.et_location);
         this.etUserID = findViewById(R.id.et_signup_id);
+        this.tvLogin = findViewById(R.id.tv_login);
 
         userDatabase = UserDatabase.getInstance(this);
         dao = userDatabase.getDao();
+
+        this.tvLogin.setOnClickListener(this::onClick);
         this.btnContinue.setOnClickListener(this::onClick);
+
     }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_continue) {
@@ -47,16 +55,20 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
             String location = etLocation.getText().toString();
             String userID = etUserID.getText().toString();
             if (checkAllFields()) {
-                User user = new User(firstName, lastName,userID, mobileNumber, password, location);
+                User user = new User(firstName, lastName, userID, mobileNumber, password, location);
                 dao.insertUser(user);
                 Toast.makeText(this, "User is Successfully Registered", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(this, LoginPage.class);
+                Intent intent = new Intent(this, LoginPage.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("user_value", user);
                 startActivity(intent);
             }
+        } else if (v.getId() == R.id.tv_login) {
+            startActivity(new Intent(this, LoginPage.class));
+            finish();
         }
     }
+
     private boolean checkAllFields() {
         if (etFirstName.getText().toString().length() == 0) {
             etFirstName.setError("This field is required");

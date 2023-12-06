@@ -1,62 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_marginTop="20sp"
-        android:layout_height="40dp">
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="@color/white"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
 
-        <ImageView
-            android:layout_width="15sp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/left_arrow" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/tv_heading_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:text="Your Profile"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20sp">
+
+            <ImageView
+                android:id="@+id/iv_go_back"
+                android:layout_width="15sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/left_arrow" />
+
+            <TextView
+                android:id="@+id/tv_heading_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="My Account"
+                android:textColor="#5B7F81"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="50dp"
+            android:orientation="vertical"
             android:padding="10dp">
-
 
             <ImageView
                 android:id="@+id/iv_user_image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:layout_gravity="center"
-                android:src="@drawable/baseline_add_photo_alternate_24"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/bg_image" />
+                android:background="@drawable/bg_image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/baseline_add_24" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="First Name : "
                 android:textSize="13sp"
-                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -64,17 +77,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:textStyle="bold"
-                android:background="@drawable/bg_edit_text"
+                android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:hint="User First Name"
                 android:paddingHorizontal="15sp"
                 android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
@@ -87,17 +100,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_edit_text"
+                android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:hint="User Last Name"
-                android:textStyle="bold"
                 android:paddingHorizontal="15sp"
                 android:textColor="@color/black"
-                android:textSize="13sp"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
@@ -110,17 +123,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:textStyle="bold"
-                android:background="@drawable/bg_edit_text"
+                android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:hint="User ID"
                 android:paddingHorizontal="15sp"
                 android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
@@ -133,19 +146,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_edit_text"
+                android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_medium"
-                android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:hint="User Mobile Number"
                 android:paddingHorizontal="15sp"
                 android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Other Information"
+                android:textColor="#5B7F81"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Location : "
                 android:textSize="13sp"
@@ -156,27 +178,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_edit_text"
+                android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
-                android:textStyle="bold"
                 android:hint="User Location"
                 android:paddingHorizontal="15sp"
                 android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/profile_edit_button"
+                android:id="@+id/tv_profile_edit_button"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/neumorphic_login_background"
-                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_button_view"
+                android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
                 android:text="@string/profile_edit"
-                android:textColor="@color/white"
+                android:textColor="#424343"
                 android:textSize="15sp" />
         </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

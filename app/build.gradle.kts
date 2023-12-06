@@ -47,4 +47,9 @@ dependencies {
     //Gif drawable
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
 
+    //Image slider
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
+
 }

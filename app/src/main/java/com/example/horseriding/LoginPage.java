@@ -28,6 +28,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     User userData;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor myEdit;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         this.btnLogin.setOnClickListener(this::onClick);
         this.tvForgetPass.setOnClickListener(this::onClick);
     }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_sign_up) {
@@ -74,43 +76,19 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 Toast.makeText(this, "Enter valid credential", Toast.LENGTH_SHORT).show();
             }
         } else if (v.getId() == R.id.tv_forget_pass) {
-            showBottomSheet();
+            Intent intent=new Intent(LoginPage.this, ForgetPasswordActivity.class);
+           /* myEdit.putString("user_id",userId);
+            myEdit.commit();*/
+            startActivity(intent);
         }
     }
+
     private boolean checkFields() {
         if (userID.getText().toString().length() == 0 || userPassword.getText().toString().length() == 0) {
             Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
-    }
-    private void showBottomSheet() {
-        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null, false);
-        etChangePassword = view.findViewById(R.id.et_change_password);
-        etConfirmPassword = view.findViewById(R.id.et_confirm_password);
-        TextView btnChange = view.findViewById(R.id.tv_change_password);
-
-        btnChange.setOnClickListener(v -> {
-            if (!etChangePassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
-                Toast.makeText(LoginPage.this, "check your password", Toast.LENGTH_SHORT).show();
-            } else {
-                List<User> userList = dao.getAllData();
-                if (userList.size() != 0) {
-                    for (int i = 0; i < userList.size(); i++) {
-                        if (userID.equals(userList.get(i).getUserID()) && password.equals(userList.get(i).getUserPassword())) {
-                            userList.get(i).setUserPassword(etConfirmPassword.getText().toString());
-                            dao.resetPassword(userId, etConfirmPassword.getText().toString());
-                        }
-                    }
-                }
-                dialog.dismiss();
-                Toast.makeText(this, "Your password is successfully changed.", Toast.LENGTH_SHORT).show();
-            }
-        });
-        dialog.setContentView(view);
-        dialog.setCancelable(true);
-        dialog.show();
-        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
 
 }
