@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,15 +22,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/left_arrow" />
+                android:src="@drawable/left_arrow"
+                android:importantForAccessibility="no" />
 
             <TextView
                 android:id="@+id/tv_heading_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/poppins_semi_bold"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/my_account"
                 android:textColor="#5B7F81"
                 android:textSize="20sp"
@@ -42,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:orientation="vertical"
             android:padding="10dp">
@@ -59,7 +59,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/bg_image"
                     android:scaleType="fitXY"
-                    android:src="@drawable/baseline_add_24" />
+                    android:src="@drawable/baseline_add_24"
+                    android:importantForAccessibility="no" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -68,7 +69,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/first_name"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -91,7 +92,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/last_name"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -114,7 +115,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/user_id"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -137,7 +138,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/mobile_number"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -161,7 +162,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="@string/other_information"
                 android:textColor="#5B7F81"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -196,21 +197,9 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
                 android:text="@string/profile_edit"
-                android:textColor="#424343"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_logout_button"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bg_button_view"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:gravity="center"
-                android:text="@string/logout"
-                android:textColor="#424343"
-                android:textSize="15sp" />
 
         </LinearLayout>
 
