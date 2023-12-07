@@ -1,0 +1,14 @@
+Index: app/src/main/java/com/example/horseriding/ui/Demo.java
+===================================================================
+diff --git a/app/src/main/java/com/example/horseriding/ui/Demo.java b/app/src/main/java/com/example/horseriding/ui/Demo.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/horseriding/ui/Demo.java	(revision adf3e67c5f628090bf9683d50244ed6bb263acef)
++++ /dev/null	(revision adf3e67c5f628090bf9683d50244ed6bb263acef)
+@@ -1,7 +0,0 @@
+-package com.example.horseriding.ui;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-public class Demo extends AppCompatActivity {
+-
+-}
