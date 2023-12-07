@@ -1,4 +1,6 @@
 package com.example.horseriding.ui;
 
-public class Demo {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Demo extends AppCompatActivity {
 }
