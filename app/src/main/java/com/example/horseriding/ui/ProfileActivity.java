@@ -64,7 +64,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         preferences = getSharedPreferences("prefs", MODE_PRIVATE);
         logInUserID = preferences.getString("user_id", "");
-        myEdit=preferences.edit();
+        myEdit = preferences.edit();
 
         userList = new ArrayList<>();
         userList = dao.getUserById(logInUserID);
@@ -91,8 +91,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = new Intent(this, EditProfileActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.tv_logout_button) {
-            myEdit.putString("user_ID","");
-            myEdit=preferences.edit();
+            myEdit.putString("user_ID", "");
+            myEdit = preferences.edit();
             startActivity(new Intent(this, LoginPageActivity.class));
             Toast.makeText(this, "You are successfully logged out.", Toast.LENGTH_SHORT).show();
             finish();
