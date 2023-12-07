@@ -1,4 +1,6 @@
 package com.example.horseriding.ui;
 
-public class Tejashavi {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Tejashavi extends AppCompatActivity {
 }
