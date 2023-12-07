@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide;
 import com.example.horseriding.R;
 
 public class ImageSliderAdapter extends PagerAdapter {
-    private Context context;
-    private int[] images;
+    private final Context context;
+    private final int[] images;
 
     public ImageSliderAdapter(Context context, int[] images) {
         this.context = context;
@@ -27,17 +27,17 @@ public class ImageSliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == object;
     }
 
+    @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = inflater.inflate(R.layout.item_image_slider, container, false);
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        View itemView = LayoutInflater.from(context).inflate(R.layout.item_image_slider, container, false);
 
         ImageView imageView = itemView.findViewById(R.id.imageView);
-        Glide.with(context).load(images[position]).into(imageView);
+        loadImageIntoImageView(images[position], imageView);
 
         container.addView(itemView);
 
@@ -45,7 +45,13 @@ public class ImageSliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View) object);
+    }
+
+    private void loadImageIntoImageView(int imageResId, ImageView imageView) {
+        Glide.with(context)
+                .load(imageResId)
+                .into(imageView);
     }
 }

@@ -55,20 +55,18 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void loadUserData() {
-        if (!userList.isEmpty()) {
-            for (User user : userList) {
-                if (user.getUserID().equals(loggedInUserID)) {
-                    etFirstName.setText(user.getUserFirstName().toUpperCase());
-                    etLastName.setText(user.getUserLastName().toUpperCase());
-                    etUserID.setText(user.getUserID());
-                    etMobileNumber.setText(user.getUserPhoneNumber());
-                    password = user.getUserPassword();
-                    etUserLocation.setText(user.getUserLocation().toUpperCase());
-                }
+        for (User user : userList) {
+            if (user.getUserID().equals(loggedInUserID)) {
+                etFirstName.setText(user.getUserFirstName().toUpperCase());
+                etLastName.setText(user.getUserLastName().toUpperCase());
+                etUserID.setText(user.getUserID());
+                etMobileNumber.setText(user.getUserPhoneNumber());
+                password = user.getUserPassword();
+                etUserLocation.setText(user.getUserLocation().toUpperCase());
+                break; // No need to continue looping once the user is found
             }
         }
     }
-
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_save_changes) {
@@ -76,7 +74,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             startActivity(new Intent(this, ProfileActivity.class));
         }
     }
-
     private void updateUserProfile() {
         String firstName = etFirstName.getText().toString();
         String lastName = etLastName.getText().toString();

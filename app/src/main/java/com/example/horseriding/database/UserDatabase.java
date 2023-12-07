@@ -9,18 +9,26 @@ import androidx.room.RoomDatabase;
 import com.example.horseriding.dao.UserDao;
 import com.example.horseriding.modal.User;
 
-@Database(entities = {User.class},version = 7, exportSchema = false)
+@Database(entities = {User.class}, version = 7, exportSchema = false)
 public abstract class UserDatabase extends RoomDatabase {
 
+    private static volatile UserDatabase INSTANCE;
     public abstract UserDao getDao();
-    public static UserDatabase INSTANCE;
-    public static synchronized UserDatabase getInstance(Context context){
-        if(INSTANCE==null){
-            INSTANCE= Room.databaseBuilder(context.getApplicationContext(), UserDatabase.class,"UserDatabase")
-                    .allowMainThreadQueries()
-                    .fallbackToDestructiveMigration()
-                    .build();
+
+    public static UserDatabase getInstance(Context context) {
+        if (INSTANCE == null) {
+            synchronized (UserDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = buildDatabase(context);
+                }
+            }
         }
         return INSTANCE;
+    }
+    private static UserDatabase buildDatabase(Context context) {
+        return Room.databaseBuilder(context.getApplicationContext(), UserDatabase.class, "UserDatabase")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
     }
 }

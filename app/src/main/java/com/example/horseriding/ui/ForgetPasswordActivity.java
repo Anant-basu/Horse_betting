@@ -24,64 +24,63 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
     private EditText etForgetPassword, etConfirmPassword;
     private TextView btnPasswordChange;
     private UserDatabase userDatabase;
-    SharedPreferences sh;
-    private UserDao dao;
+    private SharedPreferences sharedPreferences;
+    private UserDao userDao;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forget_password_activity);
 
-        initComponent();
-
+        initComponents();
     }
 
-    private void initComponent() {
-        this.etForgetPassword = findViewById(R.id.et_change_password);
-        this.etConfirmPassword = findViewById(R.id.et_confirm_password);
-        this.btnPasswordChange = findViewById(R.id.tv_change_password);
+    private void initComponents() {
+        etForgetPassword = findViewById(R.id.et_change_password);
+        etConfirmPassword = findViewById(R.id.et_confirm_password);
+        btnPasswordChange = findViewById(R.id.tv_change_password);
 
         userDatabase = UserDatabase.getInstance(this);
-        dao = userDatabase.getDao();
+        userDao = userDatabase.getDao();
 
-        this.btnPasswordChange.setOnClickListener(this);
-
+        btnPasswordChange.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_change_password) {
-            String changePassword = this.etForgetPassword.getText().toString();
-            String confirmPassword = this.etConfirmPassword.getText().toString();
-            sh = getSharedPreferences("prefs", MODE_PRIVATE);
-            String userId = sh.getString("user_id", "");
+            String changePassword = etForgetPassword.getText().toString();
+            String confirmPassword = etConfirmPassword.getText().toString();
+            sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE);
+            String userId = sharedPreferences.getString("user_id", "");
 
             if (!changePassword.equals(confirmPassword)) {
-                Toast.makeText(ForgetPasswordActivity.this, "check your password", Toast.LENGTH_SHORT).show();
+                showToast("Check your password");
             } else {
-                List<User> userList = dao.getAllData();
-                if (userList.size() != 0) {
-                    for (int i = 0; i < userList.size(); i++) {
-                        if (userId.equals(userList.get(i).getUserID())) {
-                            userList.get(i).setUserPassword(etConfirmPassword.getText().toString());
-                            dao.resetPassword(userId, etConfirmPassword.getText().toString());
-                            dao.insertUser(new User(userList.get(i).getUserFirstName(),userList.get(i).getUserLastName(),userId,userList.get(i).getUserPhoneNumber(),
-                                    etConfirmPassword.getText().toString(),userList.get(i).getUserLocation()));
-                            Toast.makeText(this, "Your Password is successfully changed", Toast.LENGTH_SHORT).show();
+                List<User> userList = userDao.getAllData();
+                if (!userList.isEmpty()) {
+                    for (User user : userList) {
+                        if (userId.equals(user.getUserID())) {
+                            user.setUserPassword(confirmPassword);
+                            userDao.resetPassword(userId, confirmPassword);
+                            userDao.insertUser(new User(user.getUserFirstName(), user.getUserLastName(), userId, user.getUserPhoneNumber(),
+                                    confirmPassword, user.getUserLocation()));
+
+                            showToast("Your password has been successfully changed");
 
                             new Handler().postDelayed(() -> {
-
                                 startActivity(new Intent(this, LoginPageActivity.class));
                                 finish();
                             }, 1500);
-
-
+                            break; // No need to continue looping once the user is found
                         }
                     }
                 }
             }
-
         }
+    }
 
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
