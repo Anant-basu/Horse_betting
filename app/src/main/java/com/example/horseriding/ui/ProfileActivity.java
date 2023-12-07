@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,9 +31,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private UserDatabase userDatabase;
     private UserDao dao;
     private List<User> userList;
-    SharedPreferences sh;
+    SharedPreferences preferences;
+    SharedPreferences.Editor myEdit;
     String logInUserID;
-    private TextView tvFirstName, tvLastName, tvUserID, tvUserMobileNumber, tvUserLocation, tvProfileEdit;
+    private TextView tvFirstName, tvLastName, tvUserID, tvUserMobileNumber, tvUserLocation, tvProfileEdit, tvLogout;
     private ImageView ivSelectImage;
 
     @Override
@@ -41,6 +43,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.profile_page);
         userDatabase = UserDatabase.getInstance(this);
         dao = userDatabase.getDao();
+
         initComponent();
 
     }
@@ -53,12 +56,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         this.tvUserLocation = findViewById(R.id.tv_user_location);
         this.ivSelectImage = findViewById(R.id.iv_user_image);
         this.tvProfileEdit = findViewById(R.id.tv_profile_edit_button);
+        this.tvLogout = findViewById(R.id.tv_logout_button);
 
-        this.tvProfileEdit.setOnClickListener(this::onClick);
-        this.ivSelectImage.setOnClickListener(this::onClick);
+        this.tvProfileEdit.setOnClickListener(this);
+        this.ivSelectImage.setOnClickListener(this);
+        this.tvLogout.setOnClickListener(this);
 
-        sh = getSharedPreferences("prefs", MODE_PRIVATE);
-        logInUserID = sh.getString("user_id", "");
+        preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+        logInUserID = preferences.getString("user_id", "");
+        myEdit=preferences.edit();
+
         userList = new ArrayList<>();
         userList = dao.getUserById(logInUserID);
         if (userList.size() != 0) {
@@ -80,9 +87,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
             photoPickerIntent.setType("image/*");
             startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
-        } else if (v.getId()==R.id.tv_profile_edit_button) {
-            Intent intent=new Intent(this, ProfileEditActivity.class);
+        } else if (v.getId() == R.id.tv_profile_edit_button) {
+            Intent intent = new Intent(this, EditProfileActivity.class);
             startActivity(intent);
+        } else if (v.getId() == R.id.tv_logout_button) {
+            myEdit.putString("user_ID","");
+            myEdit=preferences.edit();
+            startActivity(new Intent(this, LoginPageActivity.class));
+            Toast.makeText(this, "You are successfully logged out.", Toast.LENGTH_SHORT).show();
+            finish();
+
         }
     }
 
@@ -90,16 +104,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK)
-            switch (requestCode) {
-                case GALLERY_REQUEST:
-                    Uri selectedImage = data.getData();
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
-                        ivSelectImage.setImageBitmap(bitmap);
-                    } catch (IOException e) {
-                        Log.i("TAG", "Some exception " + e);
-                    }
-                    break;
+            if (requestCode == GALLERY_REQUEST) {
+                Uri selectedImage = data.getData();
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
+                    ivSelectImage.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    Log.i("TAG", "Some exception " + e);
+                }
             }
     }
 }

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.horseriding.R;
 
-public class KYCPage extends AppCompatActivity implements View.OnClickListener {
+public class KYCPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView btnContinue;
 
@@ -31,7 +31,7 @@ public class KYCPage extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.btn_continue){
-            Intent intent=new Intent(KYCPage.this, HomePage.class);
+            Intent intent=new Intent(KYCPageActivity.this, HomePageActivity.class);
             startActivity(intent);
         }
     }

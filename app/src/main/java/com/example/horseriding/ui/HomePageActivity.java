@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private HorseDetailsAdapter adapter;
@@ -80,7 +80,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void setupBottomNavigationView() {
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.home) {
@@ -96,6 +96,9 @@ public class HomePage extends AppCompatActivity {
                 item.setIcon(R.drawable.user_white);
                 item.setTitle("Profile");
                 startActivity(new Intent(this, ProfileActivity.class));
+            } else if (id==R.id.main_wallet) {
+                item.setIcon(R.drawable.wallet);
+                item.setTitle("Profile");
             }
             return true;
         });

@@ -16,7 +16,10 @@ import com.example.horseriding.modal.User;
 import com.example.horseriding.dao.UserDao;
 import com.example.horseriding.database.UserDatabase;
 
-public class SignUPPage extends AppCompatActivity implements View.OnClickListener {
+import java.util.List;
+import java.util.Objects;
+
+public class SignUPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private UserDatabase userDatabase;
     private UserDao dao;
@@ -45,8 +48,8 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
         userDatabase = UserDatabase.getInstance(this);
         dao = userDatabase.getDao();
 
-        this.tvLogin.setOnClickListener(this::onClick);
-        this.btnContinue.setOnClickListener(this::onClick);
+        this.tvLogin.setOnClickListener(this);
+        this.btnContinue.setOnClickListener(this);
 
     }
 
@@ -59,17 +62,17 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
             String password = etPassword.getText().toString();
             String location = etLocation.getText().toString();
             String userID = etUserID.getText().toString();
-            if (checkAllFields()) {
+            if (checkAllFields() && isUserIDPrevious(userID)) {
                 User user = new User(firstName, lastName, userID, mobileNumber, password, location);
                 dao.insertUser(user);
                 Toast.makeText(this, "User is Successfully Registered", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, LoginPage.class);
+                Intent intent = new Intent(this, LoginPageActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("user_value", user);
                 startActivity(intent);
             }
         } else if (v.getId() == R.id.tv_login) {
-            startActivity(new Intent(this, LoginPage.class));
+            startActivity(new Intent(this, LoginPageActivity.class));
             finish();
         }
     }
@@ -96,4 +99,17 @@ public class SignUPPage extends AppCompatActivity implements View.OnClickListene
         }
         return true;
     }
+
+    private boolean isUserIDPrevious(String userID){
+
+        List<User> userList=dao.getAllData();
+        for (int i=0;i<userList.size();i++){
+            if (Objects.equals(userList.get(i).getUserID(), userID)){
+                Toast.makeText(this, "This user id is already exist.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

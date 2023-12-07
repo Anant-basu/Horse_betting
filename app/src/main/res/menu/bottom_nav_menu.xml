@@ -2,18 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/home_white"/>
+        android:icon="@drawable/home_white"
+        android:title="@string/home" />
     <item
         android:id="@+id/upcoming_race"
-        android:title="Upcoming Race"
-        android:icon="@drawable/upcoming_white"/>
+        android:icon="@drawable/upcoming_white"
+        android:title="@string/wallet" />
     <item
         android:id="@+id/finish"
-        android:title="Finish"
-        android:icon="@drawable/racing_white"/>
+        android:icon="@drawable/racing_white"
+        android:title="@string/stable" />
     <item
         android:id="@+id/profile"
-        android:title="Profile"
-        android:icon="@drawable/user_white"/>
+        android:icon="@drawable/user_white"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/main_wallet"
+        android:icon="@drawable/baseline_account_balance_wallet_24"
+        android:title="@string/profile" />
 </menu>

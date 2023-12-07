@@ -54,18 +54,21 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
             android:hint="@string/enter_user_id"
+            android:textColor="@color/white"
+            app:hintTextColor="@color/white"
             app:boxBackgroundColor="@android:color/transparent"
             app:boxStrokeColor="@android:color/white"
             app:boxStrokeWidth="2dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_mobile_number"
-                style="@style/MyEditTextStyle"
                 android:layout_width="match_parent"
+                android:textColorHint="@color/white"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:fontFamily="@font/poppins_medium"
                 android:inputType="text"
-                android:text="@string/my_email" />
+                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -76,6 +79,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
+            android:textColorHint="@color/white"
             android:hint="@string/Password"
             app:boxBackgroundColor="@android:color/transparent"
             app:boxStrokeColor="@android:color/white"
@@ -89,8 +93,6 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_medium"
                 android:inputType="text"
-                android:letterSpacing=".3"
-                android:text="@string/my_password"
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white"
                 android:textSize="15sp" />

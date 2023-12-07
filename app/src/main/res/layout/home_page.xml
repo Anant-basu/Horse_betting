@@ -39,7 +39,7 @@
                 android:id="@+id/rv_horse_details"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#DADADA"
+                android:background="#EDEDED"
                 android:orientation="vertical" />
 
         </androidx.core.widget.NestedScrollView>

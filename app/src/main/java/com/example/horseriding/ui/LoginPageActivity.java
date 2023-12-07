@@ -19,7 +19,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Objects;
 
-public class LoginPage extends AppCompatActivity implements View.OnClickListener {
+public class LoginPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvSignUP, btnLogin, tvForgetPass;
     private UserDatabase userDatabase;
@@ -37,6 +37,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.login_page);
         initComponents();
     }
+
     private void initComponents() {
         this.tvSignUP = findViewById(R.id.tv_sign_up);
         this.btnLogin = findViewById(R.id.btn_login);
@@ -59,7 +60,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_sign_up) {
-            Intent intent = new Intent(LoginPage.this, SignUPPage.class);
+            Intent intent = new Intent(LoginPageActivity.this, SignUPageActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_login) {
             userId = userID.getText().toString();
@@ -67,7 +68,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
             User user = dao.login(userId, password);
             if (checkFields()) {
                 if (user != null && Objects.equals(user.getUserID(), userId) && Objects.equals(user.getUserPassword(), password)) {
-                    Intent intent = new Intent(LoginPage.this, KYCPage.class);
+                    Intent intent = new Intent(LoginPageActivity.this, KYCPageActivity.class);
                     myEdit.putString("user_id",userId);
                     myEdit.commit();
                     startActivity(intent);
@@ -78,9 +79,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 Toast.makeText(this, "Enter valid credential", Toast.LENGTH_SHORT).show();
             }
         } else if (v.getId() == R.id.tv_forget_pass) {
-            Intent intent=new Intent(LoginPage.this, ForgetPasswordActivity.class);
-           /* myEdit.putString("user_id",userId);
-            myEdit.commit();*/
+            Intent intent=new Intent(LoginPageActivity.this, ForgetPasswordActivity.class);
             startActivity(intent);
         }
     }

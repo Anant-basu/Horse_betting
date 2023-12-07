@@ -44,7 +44,7 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
         userDatabase = UserDatabase.getInstance(this);
         dao = userDatabase.getDao();
 
-        this.btnPasswordChange.setOnClickListener(this::onClick);
+        this.btnPasswordChange.setOnClickListener(this);
 
     }
 
@@ -71,7 +71,7 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
 
                             new Handler().postDelayed(() -> {
 
-                                startActivity(new Intent(this, LoginPage.class));
+                                startActivity(new Intent(this, LoginPageActivity.class));
                                 finish();
                             }, 1500);
 

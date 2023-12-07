@@ -18,7 +18,7 @@ import com.example.horseriding.database.UserDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileEditActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     SharedPreferences sh;
     String logInUserID;

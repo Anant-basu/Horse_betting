@@ -47,7 +47,7 @@
     <EditText
         android:id="@+id/et_user_first_name"
         android:layout_width="match_parent"
-        android:hint="User First name"
+        android:hint="@string/user_first_name"
         android:fontFamily="@font/poppins_semi_bold"
         android:paddingHorizontal="15dp"
         android:textSize="14sp"
@@ -59,12 +59,12 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="User Last Name"/>
+        android:text="@string/user_last_name"/>
 
     <EditText
         android:id="@+id/et_user_last_name"
         android:layout_width="match_parent"
-        android:hint="User Last name"
+        android:hint="@string/user_last_name"
         android:fontFamily="@font/poppins_semi_bold"
         android:paddingHorizontal="15dp"
         android:textSize="14sp"
@@ -76,12 +76,12 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="User Mobile Number"/>
+        android:text="@string/user_mobile_number"/>
 
     <EditText
         android:id="@+id/et_user_mobile_number"
         android:layout_width="match_parent"
-        android:hint="User Mobile number"
+        android:hint="@string/user_mobile_number"
         android:fontFamily="@font/poppins_semi_bold"
         android:paddingHorizontal="15dp"
         android:textSize="14sp"
@@ -93,12 +93,12 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="User Id"/>
+        android:text="@string/user_id"/>
 
     <EditText
         android:id="@+id/et_user_id"
         android:layout_width="match_parent"
-        android:hint="User Id"
+        android:hint="@string/user_id_hint"
         android:fontFamily="@font/poppins_semi_bold"
         android:paddingHorizontal="15dp"
         android:textSize="14sp"
@@ -110,19 +110,19 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Other Information"/>
+        android:text="@string/other_information"/>
 
     <TextView
         android:layout_width="match_parent"
         android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="User Location"/>
+        android:text="@string/user_location"/>
 
     <EditText
         android:id="@+id/et_user_location"
         android:layout_width="match_parent"
-        android:hint="User Location"
+        android:hint="@string/user_location"
         android:fontFamily="@font/poppins_semi_bold"
         android:paddingHorizontal="15dp"
         android:textSize="14sp"
@@ -138,7 +138,7 @@
         android:background="@drawable/bg_button_view"
         android:fontFamily="@font/poppins_semi_bold"
         android:gravity="center"
-        android:text="Save Changes"
+        android:text="@string/save_changes"
         android:textColor="#424343"
         android:textSize="15sp" />
 
@@ -151,8 +151,8 @@
         android:background="@drawable/bg_textview_second"
         android:fontFamily="@font/poppins_semi_bold"
         android:gravity="center"
-        android:text="Cancel"
-        android:textColor="#424343"
+        android:text="@string/cancel"
+        android:textColor="#3D3E3E"
         android:textSize="15sp" />
 
 </LinearLayout>
