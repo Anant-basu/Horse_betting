@@ -17,8 +17,8 @@ import java.util.List;
 
 public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapter.ViewHolder>{
 
-    private Context context;
-    private List<HorseDetails> horseDetailsList;
+    private final Context context;
+    private final List<HorseDetails> horseDetailsList;
 
     public HorseDetailsAdapter(Context context, List<HorseDetails> horseDetailsList) {
         this.context = context;
@@ -26,36 +26,44 @@ public class HorseDetailsAdapter extends RecyclerView.Adapter<HorseDetailsAdapte
     }
     @NonNull
     @Override
-    public HorseDetailsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.rv_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(listItem);
-        return viewHolder;
+        View listItem = layoutInflater.inflate(R.layout.rv_item, parent, false);
+        return new ViewHolder(listItem);
     }
-    @Override
-    public void onBindViewHolder(@NonNull HorseDetailsAdapter.ViewHolder holder, int position) {
 
-        final HorseDetails horseDetails = horseDetailsList.get(position);
-        holder.horseImage.setImageResource(horseDetails.getHorseImage());
-        holder.horseName.setText(horseDetails.getHorseName());
-        holder.horseHeight.setText(horseDetails.getHorseHeight());
-        holder.horseWeight.setText(horseDetails.getHorseWeight());
-        holder.horseDescription.setText(horseDetails.getHorseDescription());
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        HorseDetails horseDetails = horseDetailsList.get(position);
+
+        holder.bind(horseDetails);
     }
+
     @Override
     public int getItemCount() {
         return horseDetailsList.size();
     }
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView horseImage;
-        private TextView horseName,horseHeight,horseWeight,horseDescription;
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final ImageView horseImage;
+        private final TextView horseName, horseHeight, horseWeight, horseDescription;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            horseImage=itemView.findViewById(R.id.iv_horse);
-            horseName=itemView.findViewById(R.id.tv_horse_name);
-            horseHeight=itemView.findViewById(R.id.tv_horse_height);
-            horseWeight=itemView.findViewById(R.id.tv_horse_weight);
-            horseDescription=itemView.findViewById(R.id.tv_description);
+            horseImage = itemView.findViewById(R.id.iv_horse);
+            horseName = itemView.findViewById(R.id.tv_horse_name);
+            horseHeight = itemView.findViewById(R.id.tv_horse_height);
+            horseWeight = itemView.findViewById(R.id.tv_horse_weight);
+            horseDescription = itemView.findViewById(R.id.tv_description);
+        }
+
+        public void bind(HorseDetails horseDetails) {
+            horseImage.setImageResource(horseDetails.getHorseImage());
+            horseName.setText(horseDetails.getHorseName());
+            horseHeight.setText(horseDetails.getHorseHeight());
+            horseWeight.setText(horseDetails.getHorseWeight());
+            horseDescription.setText(horseDetails.getHorseDescription());
         }
     }
 }
