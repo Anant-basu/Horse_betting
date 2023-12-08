@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="Tokens Balance"
+            android:text="@string/tokens_balance"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -45,7 +45,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/iv_dollar"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:text="200.00 USD"
+                android:text="@string/_200_00_usd"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -92,7 +92,7 @@
                 android:layout_below="@id/iv_send"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Send"
+                android:text="@string/send"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -103,9 +103,9 @@
                 android:layout_below="@id/iv_recieve"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/tv_send"
+                android:layout_toEndOf="@id/tv_send"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Recieve"
+                android:text="@string/recieve"
                 android:textColor="@color/white" />
 
             <TextView
@@ -114,9 +114,9 @@
                 android:layout_below="@id/iv_swap"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/tv_recieve"
+                android:layout_toEndOf="@id/tv_recieve"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Swap"
+                android:text="@string/swap"
                 android:textColor="@color/white" />
 
         </RelativeLayout>
@@ -164,22 +164,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/poppins_semi_bold"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="Add Amount : "
+                android:text="@string/add_amount"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/et_entered_amount"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:textSize="13sp"
                 android:layout_marginStart="10dp"
-                android:inputType="number"
+                android:text="@string/add_amount"
                 android:background="@drawable/bg_textview_second"
-                android:fontFamily="@font/poppins_semi_bold"
-                android:hint="00.00"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/_00_00"
+                android:inputType="number"
                 android:paddingHorizontal="15dp" />
 
         </LinearLayout>
@@ -189,13 +191,14 @@
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:background="@drawable/bg_add_button"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:text="Add  Ammount"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/add_amount"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:paddingHorizontal="15dp"
             android:paddingVertical="7dp"
             android:gravity="center"
+            android:textSize="14sp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>
 
