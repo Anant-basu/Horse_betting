@@ -72,7 +72,7 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
                                 startActivity(new Intent(this, LoginPageActivity.class));
                                 finish();
                             }, 1500);
-                            break; // No need to continue looping once the user is found
+                            break;
                         }
                     }
                 }

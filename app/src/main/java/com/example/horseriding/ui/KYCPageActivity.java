@@ -12,20 +12,17 @@ import com.example.horseriding.R;
 
 public class KYCPageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView btnContinue;
-
+    TextView btnContinue;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kyc_page);
-
         initComponents();
     }
 
     private void initComponents() {
         this.btnContinue=this.findViewById(R.id.btn_continue);
-
-        this.btnContinue.setOnClickListener(this::onClick);
+        this.btnContinue.setOnClickListener(this);
     }
 
     @Override

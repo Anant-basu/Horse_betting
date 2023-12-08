@@ -35,6 +35,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:4.11.1")
 
     //room database
     implementation("androidx.room:room-runtime:2.6.1")
@@ -42,14 +44,15 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.6.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
     //bottom navigation
     implementation("com.google.android.material:material:1.10.0")
+
     //Gif drawable
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
-
+    
     //Image slider
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
-
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
 }
