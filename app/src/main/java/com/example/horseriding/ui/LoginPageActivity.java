@@ -21,75 +21,88 @@ import java.util.Objects;
 
 public class LoginPageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView tvSignUP, btnLogin, tvForgetPass;
+    private static final String PREFS_NAME = "prefs";
+    private static final String USER_ID_KEY = "user_id";
+
+    private TextView tvSignUp, btnLogin, tvForgetPass;
+    private EditText userID, userPassword;
+    private String userId, password;
     private UserDatabase userDatabase;
     private UserDao dao;
-    private EditText userID, userPassword,etChangePassword,etConfirmPassword;
-    String userId, password,changePassword,confirmPassword;
-    BottomSheetDialog dialog;
-    User userData;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor myEdit;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor myEdit;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-        initComponents();
+        initializeComponents();
     }
+    private void initializeComponents() {
+        tvSignUp = findViewById(R.id.tv_sign_up);
+        btnLogin = findViewById(R.id.btn_login);
+        userID = findViewById(R.id.et_mobile_number);
+        userPassword = findViewById(R.id.et_password_login);
+        tvForgetPass = findViewById(R.id.tv_forget_pass);
 
-    private void initComponents() {
-        this.tvSignUP = findViewById(R.id.tv_sign_up);
-        this.btnLogin = findViewById(R.id.btn_login);
-        this.userID = findViewById(R.id.et_mobile_number);
-        this.userPassword = findViewById(R.id.et_password_login);
-        this.tvForgetPass = findViewById(R.id.tv_forget_pass);
-
-        sharedPreferences = getSharedPreferences("prefs",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         myEdit = sharedPreferences.edit();
 
         userDatabase = UserDatabase.getInstance(this);
         dao = userDatabase.getDao();
-        dialog = new BottomSheetDialog(this);
-
-        this.tvSignUP.setOnClickListener(this::onClick);
-        this.btnLogin.setOnClickListener(this::onClick);
-        this.tvForgetPass.setOnClickListener(this::onClick);
+        tvSignUp.setOnClickListener(this);
+        btnLogin.setOnClickListener(this);
+        tvForgetPass.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_sign_up) {
-            Intent intent = new Intent(LoginPageActivity.this, SignUPageActivity.class);
-            startActivity(intent);
+            navigateToSignUpPage();
         } else if (v.getId() == R.id.btn_login) {
-            userId = userID.getText().toString();
-            password = userPassword.getText().toString();
-            User user = dao.login(userId, password);
-            if (checkFields()) {
-                if (user != null && Objects.equals(user.getUserID(), userId) && Objects.equals(user.getUserPassword(), password)) {
-                    Intent intent = new Intent(LoginPageActivity.this, KYCPageActivity.class);
-                    myEdit.putString("user_id",userId);
-                    myEdit.commit();
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(this, "wrong credentials.", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(this, "Enter valid credential", Toast.LENGTH_SHORT).show();
-            }
+            handleLoginButtonClick();
         } else if (v.getId() == R.id.tv_forget_pass) {
-            Intent intent=new Intent(LoginPageActivity.this, ForgetPasswordActivity.class);
-            startActivity(intent);
+            navigateToForgetPasswordPage();
         }
     }
+    private void navigateToSignUpPage() {
+        Intent intent = new Intent(LoginPageActivity.this, SignUPageActivity.class);
+        startActivity(intent);
+    }
+    private void handleLoginButtonClick() {
+        userId = userID.getText().toString();
+        password = userPassword.getText().toString();
+        User user = dao.login(userId, password);
 
+        if (checkFields()) {
+            if (isValidUser(user)) {
+                startKYCPageActivity();
+            } else {
+                Toast.makeText(this, "Wrong credentials.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Enter valid credentials", Toast.LENGTH_SHORT).show();
+        }
+    }
+    private boolean isValidUser(User user) {
+        return user != null && Objects.equals(user.getUserID(), userId) && Objects.equals(user.getUserPassword(), password);
+    }
+    private void startKYCPageActivity() {
+        Intent intent = new Intent(LoginPageActivity.this, KYCPageActivity.class);
+        myEdit.putString(USER_ID_KEY, userId);
+        myEdit.apply();
+        startActivity(intent);
+    }
+    private void navigateToForgetPasswordPage() {
+        Intent intent = new Intent(LoginPageActivity.this, ForgetPasswordActivity.class);
+        startActivity(intent);
+    }
     private boolean checkFields() {
-        if (userID.getText().toString().length() == 0 || userPassword.getText().toString().length() == 0) {
-            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+        if (userID.getText().toString().isEmpty() || userPassword.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
-
 }

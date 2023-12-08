@@ -63,7 +63,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                 etMobileNumber.setText(user.getUserPhoneNumber());
                 password = user.getUserPassword();
                 etUserLocation.setText(user.getUserLocation().toUpperCase());
-                break; // No need to continue looping once the user is found
+                break;
             }
         }
     }

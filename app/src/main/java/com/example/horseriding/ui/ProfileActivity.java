@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -81,12 +83,23 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    private final ActivityResultLauncher<Intent> galleryLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    if (result.getData() != null) {
+                        Uri selectedImageUri = result.getData().getData();
+                    }
+                }
+            }
+    );
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.iv_user_image) {
             Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
             photoPickerIntent.setType("image/*");
-            startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
+            galleryLauncher.launch(photoPickerIntent);
         } else if (v.getId() == R.id.tv_profile_edit_button) {
             Intent intent = new Intent(this, EditProfileActivity.class);
             startActivity(intent);
@@ -96,7 +109,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(new Intent(this, LoginPageActivity.class));
             Toast.makeText(this, "You are successfully logged out.", Toast.LENGTH_SHORT).show();
             finish();
-
         }
     }
 

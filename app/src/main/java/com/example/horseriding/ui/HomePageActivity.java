@@ -28,7 +28,7 @@ public class HomePageActivity extends AppCompatActivity {
     private int currentPosition = 0;
     private Handler handler = new Handler();
     private Runnable runnable;
-    private int[] images = {R.drawable.image4, R.drawable.image2, R.drawable.image3};
+    private final int[] images = {R.drawable.image4, R.drawable.image2, R.drawable.image3};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,21 +64,15 @@ public class HomePageActivity extends AppCompatActivity {
 
     private List<HorseDetails> getHorseListDetails() {
         List<HorseDetails> horseDetails = new ArrayList<>();
-        horseDetails.add(new HorseDetails("Spartan Sprinters", R.drawable.jockey1, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
-        horseDetails.add(new HorseDetails("Horse Able", R.drawable.jockey2, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
-        horseDetails.add(new HorseDetails("Horse Exquisite", R.drawable.jockey3, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
-        horseDetails.add(new HorseDetails("Riding Collaborate", R.drawable.jockey4, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
-        horseDetails.add(new HorseDetails("Riding Beryl", R.drawable.jockey5, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
-        horseDetails.add(new HorseDetails("Horse Jungle", R.drawable.jockey6, "8.3ft", "300Kg", ("There is something about outside of a horse that is good" +
-                " for the Inside of a Man")));
+        String Description = "There is something about outside of a horse that is good for the Inside of a Man";
+        horseDetails.add(new HorseDetails("Spartan Sprinters", R.drawable.jockey1, "8.3ft", "300Kg", Description));
+        horseDetails.add(new HorseDetails("Horse Able", R.drawable.jockey2, "8.3ft", "300Kg", Description));
+        horseDetails.add(new HorseDetails("Horse Exquisite", R.drawable.jockey3, "8.3ft", "300Kg", Description));
+        horseDetails.add(new HorseDetails("Riding Collaborate", R.drawable.jockey4, "8.3ft", "300Kg", Description));
+        horseDetails.add(new HorseDetails("Riding Beryl", R.drawable.jockey5, "8.3ft", "300Kg", Description));
+        horseDetails.add(new HorseDetails("Horse Jungle", R.drawable.jockey6, "8.3ft", "300Kg", Description));
         return horseDetails;
     }
-
     private void setupBottomNavigationView() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
