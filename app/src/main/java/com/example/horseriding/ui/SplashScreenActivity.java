@@ -32,7 +32,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -45,17 +44,14 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (userList.size() != 0) {
             for (int i = 0; i < userList.size(); i++) {
                 if (userId.equals(userList.get(i).getUserID())) {
-
                     new Handler().postDelayed(() -> {
                         startActivity(new Intent(SplashScreenActivity.this, HomePageActivity.class));
 
                         finish();
                     }, 2000);
-
                 } else if (userList.get(i).getUserID().equals("")) {
                     Intent intent = new Intent(SplashScreenActivity.this, LoginPageActivity.class);
                     startActivity(intent);
-
                     finish();
                 }
             }
@@ -63,12 +59,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> {
                     Intent intent = new Intent(SplashScreenActivity.this, LoginPageActivity.class);
                     startActivity(intent);
-
                     finish();
-
             }, 2000);
-
-
         }
     }
 }
