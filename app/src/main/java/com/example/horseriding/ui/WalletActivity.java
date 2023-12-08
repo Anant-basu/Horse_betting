@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.horseriding.R;
 import com.example.horseriding.adapter.RupeeAdapter;
-import com.example.horseriding.dao.OnClickListener;
+import com.example.horseriding.dao.OnItemClickListener;
 import com.example.horseriding.modal.RupeeModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WalletActivity extends AppCompatActivity implements OnClickListener {
+public class WalletActivity extends AppCompatActivity implements OnItemClickListener {
 
     private ImageView ivSend, ivReceive, ivSwap;
     RecyclerView recyclerView;
@@ -44,6 +44,7 @@ public class WalletActivity extends AppCompatActivity implements OnClickListener
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(rupeeAdapter);
+        rupeeAdapter.setClickListener(this);
 
     }
 
