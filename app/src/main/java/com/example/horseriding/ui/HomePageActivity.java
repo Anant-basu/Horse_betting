@@ -92,7 +92,8 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ProfileActivity.class));
             } else if (id==R.id.main_wallet) {
                 item.setIcon(R.drawable.wallet);
-                item.setTitle("Profile");
+                item.setTitle("Wallet");
+                startActivity(new Intent(this, WalletActivity.class));
             }
             return true;
         });

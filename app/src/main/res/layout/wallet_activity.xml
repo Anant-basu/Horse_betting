@@ -8,8 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_weight=".3"
         android:background="#0E1643"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -35,6 +37,7 @@
                 android:src="@drawable/dollar_symbol" />
 
             <TextView
+                android:id="@+id/tv_total_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -49,7 +52,7 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,28 +61,65 @@
 
             <ImageView
                 android:id="@+id/iv_send"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:background="@drawable/bg_boxes"
                 android:src="@drawable/baseline_arrow_outward_24" />
 
             <ImageView
                 android:id="@+id/iv_recieve"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="35dp"
+                android:layout_toEndOf="@id/iv_send"
                 android:background="@drawable/bg_boxes"
                 android:src="@drawable/baseline_call_received_24" />
 
             <ImageView
                 android:id="@+id/iv_swap"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="35dp"
+                android:layout_toEndOf="@id/iv_recieve"
                 android:background="@drawable/bg_boxes"
+                android:rotation="-90"
                 android:src="@drawable/baseline_loop_24" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_send"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Send"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_recieve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_recieve"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/tv_send"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Recieve"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_swap"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/tv_recieve"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Swap"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -91,10 +131,32 @@
         android:orientation="vertical"
         android:padding="13dp">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="5dp"
+            android:visibility="invisible" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_rupee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -104,20 +166,38 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:gravity="center"
-                android:text="Enter Amount : "
-                android:textSize="20sp" />
+                android:text="Add Amount : "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/et_amount"
+                android:id="@+id/et_entered_amount"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
                 android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:hint="00.00"
                 android:paddingHorizontal="15dp" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_entered_amount"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_add_button"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Add  Ammount"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="7dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
