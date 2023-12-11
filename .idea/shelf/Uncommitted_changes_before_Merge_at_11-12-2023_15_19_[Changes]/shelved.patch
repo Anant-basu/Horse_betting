@@ -1,0 +1,144 @@
+Index: app/src/main/res/layout/profile_page.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/white\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"10dp\">\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:layout_marginTop=\"20sp\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_go_back\"\r\n                android:layout_width=\"15sp\"\r\n                android:layout_marginStart=\"10dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_alignParentStart=\"true\"\r\n                android:layout_centerVertical=\"true\"\r\n                android:src=\"@drawable/left_arrow\"\r\n                android:importantForAccessibility=\"no\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_heading_name\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_centerInParent=\"true\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"@string/my_account\"\r\n                android:textColor=\"#5B7F81\"\r\n                android:textSize=\"20sp\"\r\n                android:textStyle=\"bold\" />\r\n        </RelativeLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginBottom=\"20dp\"\r\n            android:orientation=\"vertical\"\r\n            android:padding=\"10dp\">\r\n\r\n            <androidx.cardview.widget.CardView\r\n                android:layout_width=\"90dp\"\r\n                android:layout_height=\"90dp\"\r\n                android:layout_marginTop=\"20dp\"\r\n                android:layout_gravity=\"center\"\r\n                app:cardCornerRadius=\"45dp\">\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/iv_user_image\"\r\n                    android:layout_width=\"90dp\"\r\n                    android:layout_height=\"90dp\"\r\n                    android:layout_gravity=\"center\"\r\n                    android:background=\"@drawable/bg_image\"\r\n                    android:scaleType=\"fitXY\"\r\n                    android:src=\"@drawable/baseline_add_24\"\r\n                    android:importantForAccessibility=\"no\" />\r\n            </androidx.cardview.widget.CardView>\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:text=\"@string/first_name\"\r\n                android:textSize=\"12sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_first_name\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:textColorHint=\"@color/black\"\r\n                android:gravity=\"center_vertical\"\r\n                android:paddingHorizontal=\"15sp\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:text=\"@string/last_name\"\r\n                android:textSize=\"12sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_last_name\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:gravity=\"center_vertical\"\r\n                android:paddingHorizontal=\"15sp\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:text=\"@string/email_address\"\r\n                android:textSize=\"12sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_user_id\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:gravity=\"center_vertical\"\r\n                android:paddingHorizontal=\"15sp\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"@string/mobile_number\"\r\n                android:textSize=\"12sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_mobile_number\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:gravity=\"center_vertical\"\r\n                android:paddingHorizontal=\"15sp\"\r\n                android:letterSpacing=\".1\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:text=\"@string/other_information\"\r\n                android:textColor=\"#5B7F81\"\r\n                android:textSize=\"13sp\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:text=\"@string/location\"\r\n                android:textSize=\"12sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_user_location\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center_vertical\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:gravity=\"center_vertical\"\r\n                android:paddingHorizontal=\"15sp\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_profile_edit_button\"\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginTop=\"20dp\"\r\n                android:background=\"@drawable/bg_button_view\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:gravity=\"center\"\r\n                android:text=\"@string/profile_edit\"\r\n                android:textColor=\"@android:color/white\"/>\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_logout_button\"\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginTop=\"20dp\"\r\n                android:background=\"@drawable/bg_button_view\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:gravity=\"center\"\r\n                android:text=\"@string/logout\"\r\n                android:textColor=\"@android:color/white\"/>\r\n\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/profile_page.xml b/app/src/main/res/layout/profile_page.xml
+--- a/app/src/main/res/layout/profile_page.xml	(revision 9126a48985dc5b1fcad7219ddd2095dfbc28c14f)
++++ b/app/src/main/res/layout/profile_page.xml	(date 1702288174286)
+@@ -33,7 +33,7 @@
+                 android:layout_centerInParent="true"
+                 android:fontFamily="@font/poppins_medium"
+                 android:text="@string/my_account"
+-                android:textColor="#5B7F81"
++                android:textColor="@color/green_color"
+                 android:textSize="20sp"
+                 android:textStyle="bold" />
+         </RelativeLayout>
+Index: app/src/main/res/layout/item_rupee.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n\r\n<androidx.cardview.widget.CardView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"40dp\"\r\n    android:layout_margin=\"7dp\"\r\n    app:cardCornerRadius=\"9dp\"\r\n    app:cardElevation=\"5dp\">\r\n\r\n    <RelativeLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"40dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_rupee\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_margin=\"5dp\"\r\n            android:fontFamily=\"@font/poppins_regular\"\r\n            android:padding=\"5dp\"\r\n            android:text=\"@string/_500\"\r\n            android:textColor=\"@color/dark_blue\" />\r\n\r\n    </RelativeLayout>\r\n</androidx.cardview.widget.CardView>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_rupee.xml b/app/src/main/res/layout/item_rupee.xml
+--- a/app/src/main/res/layout/item_rupee.xml	(revision 9126a48985dc5b1fcad7219ddd2095dfbc28c14f)
++++ b/app/src/main/res/layout/item_rupee.xml	(date 1702288174286)
+@@ -22,6 +22,5 @@
+             android:padding="5dp"
+             android:text="@string/_500"
+             android:textColor="@color/dark_blue" />
+-
+     </RelativeLayout>
+ </androidx.cardview.widget.CardView>
+Index: app/src/main/res/drawable/bg_image.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><shape xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:shape=\"oval\">\r\n    <stroke\r\n        android:width=\"2.2dp\"\r\n        android:color=\"#5B7F81\"\r\n        />\r\n    <solid android:color=\"#5B7F81\"/>\r\n    <corners android:radius=\"20dp\"/>\r\n\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/bg_image.xml b/app/src/main/res/drawable/bg_image.xml
+--- a/app/src/main/res/drawable/bg_image.xml	(revision 9126a48985dc5b1fcad7219ddd2095dfbc28c14f)
++++ b/app/src/main/res/drawable/bg_image.xml	(date 1702288174285)
+@@ -2,9 +2,9 @@
+     android:shape="oval">
+     <stroke
+         android:width="2.2dp"
+-        android:color="#5B7F81"
++        android:color="@color/green_color"
+         />
+-    <solid android:color="#5B7F81"/>
++    <solid android:color="@color/green_color"/>
+     <corners android:radius="20dp"/>
+ 
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/wallet_activity.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#0E1643\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_gravity=\"center\"\r\n        android:layout_weight=\".3\"\r\n        android:background=\"#0E1643\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:fontFamily=\"@font/poppins_semi_bold\"\r\n            android:text=\"@string/tokens_balance\"\r\n            android:textColor=\"@color/white\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_dollar\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_centerVertical=\"true\"\r\n                android:src=\"@drawable/dollar_symbol\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_total_amount\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_centerVertical=\"true\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:layout_toEndOf=\"@id/iv_dollar\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:text=\"@string/_200_00_usd\"\r\n                android:textColor=\"@color/white\"\r\n                android:textSize=\"25sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n        </RelativeLayout>\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_send\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:src=\"@drawable/baseline_arrow_outward_24\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_recieve\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:layout_marginStart=\"35dp\"\r\n                android:layout_toEndOf=\"@id/iv_send\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:src=\"@drawable/baseline_call_received_24\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_swap\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:layout_marginStart=\"35dp\"\r\n                android:layout_toEndOf=\"@id/iv_recieve\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:rotation=\"-90\"\r\n                android:src=\"@drawable/baseline_loop_24\"/>\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_send\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_send\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"@string/send\"\r\n                android:textColor=\"@color/white\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_recieve\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_recieve\"\r\n                android:layout_marginStart=\"25dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_toEndOf=\"@id/tv_send\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"@string/recieve\"\r\n                android:textColor=\"@color/white\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_swap\"\r\n                android:layout_marginStart=\"25dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_toEndOf=\"@id/tv_recieve\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"@string/swap\"\r\n                android:textColor=\"@color/white\" />\r\n\r\n        </RelativeLayout>\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_weight=\".7\"\r\n        android:background=\"@drawable/bg_bottom_navigation\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"13dp\">\r\n\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"5dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:visibility=\"invisible\" />\r\n\r\n        <androidx.core.widget.NestedScrollView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <androidx.recyclerview.widget.RecyclerView\r\n                android:id=\"@+id/rv_rupee\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\" />\r\n\r\n        </androidx.core.widget.NestedScrollView>\r\n\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"10dp\"\r\n            android:visibility=\"invisible\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_amount\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:gravity=\"center\"\r\n                android:text=\"@string/add_amount\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"12sp\" />\r\n\r\n            <EditText\r\n                android:id=\"@+id/et_entered_amount\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:textSize=\"13sp\"\r\n                android:layout_marginStart=\"10dp\"\r\n                android:text=\"@string/add_amount\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_regular\"\r\n                android:hint=\"@string/_00_00\"\r\n                android:inputType=\"number\"\r\n                android:paddingHorizontal=\"15dp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_entered_amount\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:background=\"@drawable/bg_add_button\"\r\n            android:fontFamily=\"@font/poppins_regular\"\r\n            android:text=\"@string/add_payment\"\r\n            android:textColor=\"@color/white\"\r\n            android:textStyle=\"bold\"\r\n            android:paddingHorizontal=\"15dp\"\r\n            android:paddingVertical=\"7dp\"\r\n            android:gravity=\"center\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_height=\"35dp\"/>\r\n\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/wallet_activity.xml b/app/src/main/res/layout/wallet_activity.xml
+--- a/app/src/main/res/layout/wallet_activity.xml	(revision 9126a48985dc5b1fcad7219ddd2095dfbc28c14f)
++++ b/app/src/main/res/layout/wallet_activity.xml	(date 1702288174287)
+@@ -19,10 +19,10 @@
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginTop="20dp"
+-            android:fontFamily="@font/poppins_semi_bold"
++            android:fontFamily="@font/poppins_regular"
+             android:text="@string/tokens_balance"
+             android:textColor="@color/white"
+-            android:textSize="16sp" />
++            android:textSize="18dp" />
+ 
+         <RelativeLayout
+             android:layout_width="wrap_content"
+@@ -32,7 +32,7 @@
+             <ImageView
+                 android:id="@+id/iv_dollar"
+                 android:layout_width="30dp"
+-                android:layout_height="30dp"
++                android:layout_height="20dp"
+                 android:layout_centerVertical="true"
+                 android:src="@drawable/dollar_symbol" />
+ 
+@@ -42,12 +42,13 @@
+                 android:layout_height="wrap_content"
+                 android:layout_centerVertical="true"
+                 android:layout_gravity="center"
++                android:gravity="center"
+                 android:layout_marginTop="10dp"
+                 android:layout_toEndOf="@id/iv_dollar"
+                 android:fontFamily="@font/poppins_semi_bold"
+                 android:text="@string/_200_00_usd"
+                 android:textColor="@color/white"
+-                android:textSize="25sp"
++                android:textSize="18sp"
+                 android:textStyle="bold" />
+ 
+         </RelativeLayout>
+@@ -168,16 +169,15 @@
+                 android:gravity="center"
+                 android:text="@string/add_amount"
+                 android:textColor="@color/black"
+-                android:textSize="12sp" />
++                android:textSize="15sp" />
+ 
+             <EditText
+                 android:id="@+id/et_entered_amount"
+                 android:layout_width="match_parent"
+-                android:layout_height="30dp"
++                android:layout_height="46dp"
+                 android:layout_gravity="center"
+                 android:textSize="13sp"
+                 android:layout_marginStart="10dp"
+-                android:text="@string/add_amount"
+                 android:background="@drawable/bg_textview_second"
+                 android:fontFamily="@font/poppins_regular"
+                 android:hint="@string/_00_00"
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n    <color name=\"dark_red\">#990000</color>\r\n    <color name=\"pink_color\">#e6005c</color>\r\n    <color name=\"light_red\">#ff0000</color>\r\n    <color name=\"deep_light_pink\">#FAF5F7</color>\r\n    <color name=\"light_cream\">#FFFFE6</color>\r\n    <color name=\"dark_blue\">#006080</color>\r\n    <color name=\"dark_pink\">#DC143C</color>\r\n    <color name=\"deep_blue\">#001F3F</color>\r\n    <color name=\"test_color\">#E74C3C</color>\r\n    <color name=\"slack_colors\">#4A154B</color>\r\n    <color name=\"transparent\">#80000000</color>\r\n\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision 9126a48985dc5b1fcad7219ddd2095dfbc28c14f)
++++ b/app/src/main/res/values/colors.xml	(date 1702288174288)
+@@ -13,6 +13,6 @@
+     <color name="test_color">#E74C3C</color>
+     <color name="slack_colors">#4A154B</color>
+     <color name="transparent">#80000000</color>
+-
++    <color name="green_color">#2B8F65</color>
+ 
+ </resources>
+\ No newline at end of file
