@@ -114,7 +114,7 @@
                 android:layout_below="@id/iv_swap"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/tv_recieve"
+                android:layout_toEndOf="@id/tv_recieve"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Swap"
                 android:textColor="@color/white" />
@@ -190,13 +190,27 @@
             android:layout_width="wrap_content"
             android:background="@drawable/bg_add_button"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="Add  Ammount"
+            android:text="@string/add_payment_button"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:paddingHorizontal="15dp"
             android:paddingVertical="7dp"
             android:gravity="center"
             android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:background="@drawable/bg_add_button"
+            android:text="Done"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:paddingVertical="7dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

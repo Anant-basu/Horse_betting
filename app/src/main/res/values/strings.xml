@@ -56,6 +56,6 @@
     <string name="wallet">Wallet</string>
     <string name="home">Home</string>
     <string name="logout">Logout</string>
-
+    <string name="add_payment_button">Add Payment</string>
 
 </resources>
