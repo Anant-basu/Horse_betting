@@ -19,12 +19,10 @@ public class KYCPageActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.kyc_page);
         initComponents();
     }
-
     private void initComponents() {
         this.btnContinue=this.findViewById(R.id.btn_continue);
         this.btnContinue.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.btn_continue){
