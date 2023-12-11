@@ -175,9 +175,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:textSize="13sp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="5dp"
                 android:layout_marginStart="10dp"
-                android:text="@string/add_amount"
+                android:textColorHint="@color/black"
+                android:drawableStart="@drawable/baseline_currency_bitcoin_24"
                 android:background="@drawable/bg_textview_second"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="@string/_00_00"
@@ -188,7 +191,7 @@
 
         <TextView
             android:id="@+id/tv_entered_amount"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:background="@drawable/bg_add_button"
             android:fontFamily="@font/poppins_regular"
@@ -201,6 +204,23 @@
             android:textSize="14sp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_add_button"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Done"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="7dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 
