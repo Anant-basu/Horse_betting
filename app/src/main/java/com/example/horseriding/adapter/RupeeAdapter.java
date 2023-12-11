@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.horseriding.R;
-import com.example.horseriding.dao.OnClickListener;
+import com.example.horseriding.dao.OnItemClickListener;
 import com.example.horseriding.modal.RupeeModel;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class RupeeAdapter  extends RecyclerView.Adapter<RupeeAdapter.ViewHolder>
 
     private List<RupeeModel> rupeeModelList;
     Context context;
-    private static OnClickListener clickListener;
+    private static OnItemClickListener clickListener;
 
     public RupeeAdapter(List<RupeeModel> rupeeModelList, Context context) {
         this.rupeeModelList = rupeeModelList;
@@ -43,7 +43,7 @@ public class RupeeAdapter  extends RecyclerView.Adapter<RupeeAdapter.ViewHolder>
 
     }
 
-    public void setClickListener(OnClickListener itemClickListener) {
+    public void setClickListener(OnItemClickListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
 

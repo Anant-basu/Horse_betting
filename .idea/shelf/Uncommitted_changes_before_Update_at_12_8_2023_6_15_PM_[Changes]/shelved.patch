@@ -1,0 +1,160 @@
+Index: app/src/main/res/layout/wallet_activity.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#0E1643\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_gravity=\"center\"\r\n        android:layout_weight=\".3\"\r\n        android:background=\"#0E1643\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:fontFamily=\"@font/poppins_semi_bold\"\r\n            android:text=\"Tokens Balance\"\r\n            android:textColor=\"@color/white\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_dollar\"\r\n                android:layout_width=\"30dp\"\r\n                android:layout_height=\"30dp\"\r\n                android:layout_centerVertical=\"true\"\r\n                android:src=\"@drawable/dollar_symbol\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_total_amount\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_centerVertical=\"true\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:layout_toEndOf=\"@id/iv_dollar\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:text=\"200.00 USD\"\r\n                android:textColor=\"@color/white\"\r\n                android:textSize=\"25sp\"\r\n                android:textStyle=\"bold\" />\r\n\r\n        </RelativeLayout>\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_send\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:src=\"@drawable/baseline_arrow_outward_24\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_recieve\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:layout_marginStart=\"35dp\"\r\n                android:layout_toEndOf=\"@id/iv_send\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:src=\"@drawable/baseline_call_received_24\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/iv_swap\"\r\n                android:layout_width=\"35dp\"\r\n                android:layout_height=\"35dp\"\r\n                android:layout_marginStart=\"35dp\"\r\n                android:layout_toEndOf=\"@id/iv_recieve\"\r\n                android:background=\"@drawable/bg_boxes\"\r\n                android:rotation=\"-90\"\r\n                android:src=\"@drawable/baseline_loop_24\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_send\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_send\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"Send\"\r\n                android:textColor=\"@color/white\"\r\n                android:textStyle=\"bold\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_recieve\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_recieve\"\r\n                android:layout_marginStart=\"25dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_toRightOf=\"@id/tv_send\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"Recieve\"\r\n                android:textColor=\"@color/white\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_below=\"@id/iv_swap\"\r\n                android:layout_marginStart=\"25dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_toRightOf=\"@id/tv_recieve\"\r\n                android:fontFamily=\"@font/poppins_medium\"\r\n                android:text=\"Swap\"\r\n                android:textColor=\"@color/white\" />\r\n\r\n        </RelativeLayout>\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_weight=\".7\"\r\n        android:background=\"@drawable/bg_bottom_navigation\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"13dp\">\r\n\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"5dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:visibility=\"invisible\" />\r\n\r\n        <androidx.core.widget.NestedScrollView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <androidx.recyclerview.widget.RecyclerView\r\n                android:id=\"@+id/rv_rupee\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\" />\r\n\r\n        </androidx.core.widget.NestedScrollView>\r\n\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"10dp\"\r\n            android:visibility=\"invisible\"\r\n            android:layout_marginTop=\"10dp\" />\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/tv_amount\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:gravity=\"center\"\r\n                android:text=\"Add Amount : \"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"18sp\" />\r\n\r\n            <EditText\r\n                android:id=\"@+id/et_entered_amount\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:layout_marginStart=\"10dp\"\r\n                android:inputType=\"number\"\r\n                android:background=\"@drawable/bg_textview_second\"\r\n                android:fontFamily=\"@font/poppins_semi_bold\"\r\n                android:hint=\"00.00\"\r\n                android:paddingHorizontal=\"15dp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_entered_amount\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:background=\"@drawable/bg_add_button\"\r\n            android:fontFamily=\"@font/poppins_semi_bold\"\r\n            android:text=\"Add  Ammount\"\r\n            android:textColor=\"@color/white\"\r\n            android:textStyle=\"bold\"\r\n            android:paddingHorizontal=\"15dp\"\r\n            android:paddingVertical=\"7dp\"\r\n            android:gravity=\"center\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/wallet_activity.xml b/app/src/main/res/layout/wallet_activity.xml
+--- a/app/src/main/res/layout/wallet_activity.xml	(revision 53a35aa99e200dfcd85d30aae79a72c778815a98)
++++ b/app/src/main/res/layout/wallet_activity.xml	(date 1702039490875)
+@@ -114,7 +114,7 @@
+                 android:layout_below="@id/iv_swap"
+                 android:layout_marginStart="25dp"
+                 android:layout_marginTop="5dp"
+-                android:layout_toRightOf="@id/tv_recieve"
++                android:layout_toEndOf="@id/tv_recieve"
+                 android:fontFamily="@font/poppins_medium"
+                 android:text="Swap"
+                 android:textColor="@color/white" />
+@@ -190,13 +190,28 @@
+             android:layout_width="wrap_content"
+             android:background="@drawable/bg_add_button"
+             android:fontFamily="@font/poppins_semi_bold"
+-            android:text="Add  Ammount"
++            android:text="@string/add_ammount"
+             android:textColor="@color/white"
+             android:textStyle="bold"
+             android:paddingHorizontal="15dp"
+             android:paddingVertical="7dp"
+             android:gravity="center"
++            android:textSize="18sp"
++            android:layout_gravity="center"
++            android:layout_height="wrap_content"/>
++
++        <TextView
++            android:id="@+id/tv_done"
++            android:textColor="@color/white"
++            android:text="Done"
+             android:layout_gravity="center"
++            android:layout_marginTop="10dp"
++            android:paddingVertical="8sp"
++            android:textSize="18sp"
++            android:paddingHorizontal="20dp"
++            android:background="@drawable/bg_add_button"
++            android:fontFamily="@font/poppins_semi_bold"
++            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+ 
+     </LinearLayout>
+Index: app/src/main/java/com/example/horseriding/ui/WalletActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.horseriding.ui;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.recyclerview.widget.GridLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.example.horseriding.R;\r\nimport com.example.horseriding.adapter.RupeeAdapter;\r\nimport com.example.horseriding.dao.OnClickListener;\r\nimport com.example.horseriding.modal.RupeeModel;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class WalletActivity extends AppCompatActivity implements OnClickListener {\r\n\r\n    private ImageView ivSend, ivReceive, ivSwap;\r\n    RecyclerView recyclerView;\r\n    RupeeAdapter rupeeAdapter;\r\n    private TextView tvEnteredAmount;\r\n    private EditText etEnteredAmount;\r\n\r\n    @Override\r\n    protected void onCreate(@Nullable Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.wallet_activity);\r\n\r\n        initComponent();\r\n\r\n    }\r\n\r\n    private void initComponent() {\r\n        recyclerView = findViewById(R.id.rv_rupee);\r\n\r\n        rupeeAdapter = new RupeeAdapter(getList(), this);\r\n\r\n        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));\r\n        recyclerView.setHasFixedSize(true);\r\n        recyclerView.setAdapter(rupeeAdapter);\r\n\r\n    }\r\n\r\n    private List<RupeeModel> getList() {\r\n        List<RupeeModel> rupeeModelList = new ArrayList<>();\r\n        rupeeModelList.add(new RupeeModel(\"$500\"));\r\n        rupeeModelList.add(new RupeeModel(\"$1000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$2000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$4000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$5000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$6000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$7000\"));\r\n        rupeeModelList.add(new RupeeModel(\"$8000\"));\r\n\r\n        return rupeeModelList;\r\n    }\r\n\r\n\r\n    @Override\r\n    public void onItemClick(View view, int position) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/horseriding/ui/WalletActivity.java b/app/src/main/java/com/example/horseriding/ui/WalletActivity.java
+--- a/app/src/main/java/com/example/horseriding/ui/WalletActivity.java	(revision 53a35aa99e200dfcd85d30aae79a72c778815a98)
++++ b/app/src/main/java/com/example/horseriding/ui/WalletActivity.java	(date 1702039490874)
+@@ -13,13 +13,13 @@
+ 
+ import com.example.horseriding.R;
+ import com.example.horseriding.adapter.RupeeAdapter;
+-import com.example.horseriding.dao.OnClickListener;
++import com.example.horseriding.dao.OnItemClickListener;
+ import com.example.horseriding.modal.RupeeModel;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-public class WalletActivity extends AppCompatActivity implements OnClickListener {
++public class WalletActivity extends AppCompatActivity implements OnItemClickListener {
+ 
+     private ImageView ivSend, ivReceive, ivSwap;
+     RecyclerView recyclerView;
+@@ -44,6 +44,7 @@
+         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+         recyclerView.setHasFixedSize(true);
+         recyclerView.setAdapter(rupeeAdapter);
++        rupeeAdapter.setClickListener(this);
+ 
+     }
+ 
+Index: app/src/main/java/com/example/horseriding/adapter/RupeeAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.horseriding.adapter;\r\n\r\nimport android.content.Context;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.example.horseriding.R;\r\nimport com.example.horseriding.dao.OnClickListener;\r\nimport com.example.horseriding.modal.RupeeModel;\r\n\r\nimport java.util.List;\r\n\r\npublic class RupeeAdapter  extends RecyclerView.Adapter<RupeeAdapter.ViewHolder>{\r\n\r\n    private List<RupeeModel> rupeeModelList;\r\n    Context context;\r\n    private static OnClickListener clickListener;\r\n\r\n    public RupeeAdapter(List<RupeeModel> rupeeModelList, Context context) {\r\n        this.rupeeModelList = rupeeModelList;\r\n        this.context = context;\r\n    }\r\n\r\n    @NonNull\r\n    @Override\r\n    public RupeeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());\r\n        View listItem= layoutInflater.inflate(R.layout.item_rupee, parent, false);\r\n        ViewHolder viewHolder = new ViewHolder(listItem);\r\n        return viewHolder;\r\n    }\r\n\r\n    @Override\r\n    public void onBindViewHolder(@NonNull RupeeAdapter.ViewHolder holder, int position) {\r\n\r\n        final RupeeModel myListData = rupeeModelList.get(position);\r\n        holder.textView.setText(myListData.getRupeeText());\r\n\r\n    }\r\n\r\n    public void setClickListener(OnClickListener itemClickListener) {\r\n        this.clickListener = itemClickListener;\r\n    }\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n        return rupeeModelList.size();\r\n    }\r\n\r\n    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{\r\n\r\n        private TextView textView;\r\n\r\n        public ViewHolder(@NonNull View itemView) {\r\n            super(itemView);\r\n            textView=itemView.findViewById(R.id.tv_rupee);\r\n            itemView.setOnClickListener(this);\r\n        }\r\n\r\n        @Override\r\n        public void onClick(View v) {\r\n            clickListener.onItemClick(v,getPosition());\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/horseriding/adapter/RupeeAdapter.java b/app/src/main/java/com/example/horseriding/adapter/RupeeAdapter.java
+--- a/app/src/main/java/com/example/horseriding/adapter/RupeeAdapter.java	(revision 53a35aa99e200dfcd85d30aae79a72c778815a98)
++++ b/app/src/main/java/com/example/horseriding/adapter/RupeeAdapter.java	(date 1702039490872)
+@@ -10,7 +10,7 @@
+ import androidx.recyclerview.widget.RecyclerView;
+ 
+ import com.example.horseriding.R;
+-import com.example.horseriding.dao.OnClickListener;
++import com.example.horseriding.dao.OnItemClickListener;
+ import com.example.horseriding.modal.RupeeModel;
+ 
+ import java.util.List;
+@@ -19,7 +19,7 @@
+ 
+     private List<RupeeModel> rupeeModelList;
+     Context context;
+-    private static OnClickListener clickListener;
++    private static OnItemClickListener clickListener;
+ 
+     public RupeeAdapter(List<RupeeModel> rupeeModelList, Context context) {
+         this.rupeeModelList = rupeeModelList;
+@@ -43,7 +43,7 @@
+ 
+     }
+ 
+-    public void setClickListener(OnClickListener itemClickListener) {
++    public void setClickListener(OnItemClickListener itemClickListener) {
+         this.clickListener = itemClickListener;
+     }
+ 
+Index: app/src/main/java/com/example/horseriding/dao/OnClickListener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/horseriding/dao/OnClickListener.java b/app/src/main/java/com/example/horseriding/dao/OnItemClickListener.java
+rename from app/src/main/java/com/example/horseriding/dao/OnClickListener.java
+rename to app/src/main/java/com/example/horseriding/dao/OnItemClickListener.java
+--- a/app/src/main/java/com/example/horseriding/dao/OnClickListener.java	(revision 53a35aa99e200dfcd85d30aae79a72c778815a98)
++++ b/app/src/main/java/com/example/horseriding/dao/OnItemClickListener.java	(date 1702039490873)
+@@ -2,9 +2,7 @@
+ 
+ import android.view.View;
+ 
+-import com.example.horseriding.modal.RupeeModel;
+-
+-public interface OnClickListener {
++public interface OnItemClickListener {
+ 
+     void onItemClick(View view, int position);
+ 
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Horse Riding</string>\r\n    <string name=\"horse_name\">Horse Name</string>\r\n    <string name=\"horse_weight\">Horse Weight:</string>\r\n    <string name=\"_300_kg\">300 kg</string>\r\n    <string name=\"come_back_with_your_id\">Come back with your ID</string>\r\n    <string name=\"for_easy_fast_and_secure_login\">For easy , fast and secure login</string>\r\n    <string name=\"login\">LOGIN</string>\r\n    <string name=\"forget_password\">Forget password ?</string>\r\n    <string name=\"sign_up\">Sign Up</string>\r\n    <string name=\"not_a_member\">Not a member ?</string>\r\n    <string name=\"aadhar_number\">Aadhar Number</string>\r\n    <string name=\"pan_number\">Pan Number</string>\r\n    <string name=\"enter_aadhar_number\">Enter Aadhar number</string>\r\n    <string name=\"enter_pan_number\">Enter Pan Number</string>\r\n    <string name=\"date_of_birth\">Date of birth</string>\r\n    <string name=\"enter_account_number\">Enter Account Number</string>\r\n    <string name=\"kyc_information\">KYC Information</string>\r\n    <string name=\"enter_user_id\">Enter User ID</string>\r\n    <string name=\"enter_password\">Enter Password</string>\r\n    <string name=\"first_name\">First Name : </string>\r\n    <string name=\"welcome_to_horse_riding_app\">WelCome to Horse Riding App</string>\r\n    <string name=\"enter_text\">Enter text</string>\r\n    <string name=\"or\">OR</string>\r\n    <string name=\"user_id\">User ID :</string>\r\n    <string name=\"mobile_number\">Mobile Number :</string>\r\n    <string name=\"profile_edit\">Edit Profile Information</string>\r\n    <string name=\"horse_height\">\"Horse Height:</string>\r\n    <string name=\"description\">Description</string>\r\n    <string name=\"eight_ft\">8.4ft</string>\r\n    <string name=\"Continue\">Continue</string>\r\n    <string name=\"location\">Location : </string>\r\n    <string name=\"Password\">Password</string>\r\n    <string name=\"email_address\">Email Address</string>\r\n    <string name=\"last_name\">Last Name : </string>\r\n    <string name=\"my_password\">Enter Password</string>\r\n    <string name=\"my_email\">Enter User ID</string>\r\n    <string name=\"account_number\">Account Number</string>\r\n    <string name=\"d_o_b\">Date of Birth</string>\r\n    <string name=\"you_have_already_account\">You have already account?</string>\r\n    <string name=\"change_your_password\">Change Your Password</string>\r\n    <string name=\"confirm_password\">Confirm Password</string>\r\n    <string name=\"my_account\">My Account</string>\r\n    <string name=\"user_first_name\">User First Name</string>\r\n    <string name=\"user_last_name\">User Last Name</string>\r\n    <string name=\"user_mobile_number\">User Mobile Number</string>\r\n    <string name=\"other_information\">Other Information</string>\r\n    <string name=\"user_location\">User Location</string>\r\n    <string name=\"edit_profile\">Edit Profile</string>\r\n    <string name=\"personal_information\">Personal Information</string>\r\n    <string name=\"user_id_hint\">User Id</string>\r\n    <string name=\"save_changes\">Save Changes</string>\r\n    <string name=\"cancel\">Cancel</string>\r\n    <string name=\"profile\">Profile</string>\r\n    <string name=\"stable\">Stable</string>\r\n    <string name=\"wallet\">Wallet</string>\r\n    <string name=\"home\">Home</string>\r\n    <string name=\"logout\">Logout</string>\r\n\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 53a35aa99e200dfcd85d30aae79a72c778815a98)
++++ b/app/src/main/res/values/strings.xml	(date 1702039490876)
+@@ -56,6 +56,7 @@
+     <string name="wallet">Wallet</string>
+     <string name="home">Home</string>
+     <string name="logout">Logout</string>
++    <string name="add_ammount">Add Ammount</string>
+ 
+ 
+ </resources>
+\ No newline at end of file
