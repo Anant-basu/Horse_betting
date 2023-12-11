@@ -18,11 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_margin="5dp"
-            android:fontFamily="@font/poppins_semi_bold"
+            android:fontFamily="@font/poppins_regular"
             android:padding="5dp"
-            android:text="$500"
-            android:textColor="@color/dark_blue"
-            android:textStyle="italic" />
+            android:text="@string/_500"
+            android:textColor="@color/dark_blue" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
