@@ -25,6 +25,5 @@
             android:padding="5dp"
             android:text="$500"
             android:textColor="@color/dark_blue" />
-
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

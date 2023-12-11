@@ -2,9 +2,9 @@
     android:shape="oval">
     <stroke
         android:width="2.2dp"
-        android:color="#5B7F81"
+        android:color="@color/green_color"
         />
-    <solid android:color="#5B7F81"/>
+    <solid android:color="@color/green_color"/>
     <corners android:radius="20dp"/>
 
 </shape>
