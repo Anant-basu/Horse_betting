@@ -56,6 +56,15 @@
     <string name="wallet">Wallet</string>
     <string name="home">Home</string>
     <string name="logout">Logout</string>
-    <string name="add_payment_button">Add Payment</string>
+    <string name="add_amount">Add Amount :</string>
+    <string name="recieve">Recieve</string>
+    <string name="swap">Swap</string>
+    <string name="_200_00_usd">200.00 USD</string>
+    <string name="tokens_balance">Tokens Balance</string>
+    <string name="send">Send</string>
+    <string name="_00_00">00.00</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="_500">$500</string>
+
 
 </resources>
