@@ -10,6 +10,7 @@ import java.util.List;
 
 @androidx.room.Dao
 public interface UserDao {
+
     @Insert
     void insertUser(User user);
 

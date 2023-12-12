@@ -14,5 +14,8 @@
     <color name="slack_colors">#4A154B</color>
     <color name="transparent">#80000000</color>
     <color name="green_color">#2B8F65</color>
+    <color name="purpul_color">#6666ff</color>
+    <color name="red_color">#ff5050</color>
+    <color name="orange_color">#ff751a</color>
 
 </resources>

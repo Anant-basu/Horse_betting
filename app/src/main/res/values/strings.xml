@@ -66,6 +66,7 @@
     <string name="add_payment_button">Add Payment</string>
     <string name="_500">$500</string>
     <string name="next_button">next</string>
+    <string name="intrest_rate">Our Stock Price</string>
 
 
 </resources>
