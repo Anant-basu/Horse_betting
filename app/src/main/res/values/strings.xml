@@ -65,6 +65,7 @@
     <string name="_00_00">00.00</string>
     <string name="add_payment_button">Add Payment</string>
     <string name="_500">$500</string>
+    <string name="next_button">next</string>
 
 
 </resources>

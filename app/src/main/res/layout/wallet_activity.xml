@@ -22,7 +22,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="@string/tokens_balance"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="20sp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -42,10 +42,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/iv_dollar"
                 android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center"
                 android:text="@string/_200_00_usd"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -84,7 +84,7 @@
                 android:layout_toEndOf="@id/iv_recieve"
                 android:background="@drawable/bg_boxes"
                 android:rotation="-90"
-                android:src="@drawable/baseline_loop_24"/>
+                android:src="@drawable/baseline_loop_24" />
 
             <TextView
                 android:id="@+id/tv_send"
@@ -107,7 +107,8 @@
                 android:layout_toEndOf="@id/tv_send"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/recieve"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,7 +119,8 @@
                 android:layout_toEndOf="@id/tv_recieve"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/swap"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -152,8 +154,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:visibility="invisible"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -174,32 +176,36 @@
             <EditText
                 android:id="@+id/et_entered_amount"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:textSize="13sp"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/bg_textview_second"
-                android:fontFamily="@font/poppins_regular"
+                android:drawableStart="@drawable/baseline_currency_bitcoin_24"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/poppins_semi_bold"
                 android:hint="@string/_00_00"
                 android:inputType="number"
-                android:paddingHorizontal="15dp" />
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_entered_amount"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
             android:background="@drawable/bg_add_button"
             android:fontFamily="@font/poppins_medium"
-            android:text="@string/add_payment_button"
-            android:textColor="@color/white"
-            android:textStyle="bold"
+            android:gravity="center"
             android:paddingHorizontal="15dp"
             android:paddingVertical="7dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_height="35dp"/>
+            android:text="@string/next_button"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

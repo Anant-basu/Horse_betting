@@ -1,6 +1,8 @@
 package com.example.horseriding.ui;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,8 +25,8 @@ import java.util.List;
 public class WalletActivity extends AppCompatActivity implements OnItemClickListener, View.OnClickListener {
 
     private ImageView ivSend, ivReceive, ivSwap;
-    RecyclerView recyclerView;
-    RupeeAdapter rupeeAdapter;
+    private RecyclerView recyclerView;
+    private RupeeAdapter rupeeAdapter;
     private TextView tvEnteredAmount;
     private EditText etEnteredAmount;
 
@@ -32,38 +34,53 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wallet_activity);
-
         initComponent();
-
     }
 
     private void initComponent() {
         recyclerView = findViewById(R.id.rv_rupee);
         etEnteredAmount = findViewById(R.id.et_entered_amount);
         tvEnteredAmount = findViewById(R.id.tv_entered_amount);
-        String enteredAmount = etEnteredAmount.getText().toString();
-        /*if (Integer.parseInt(enteredAmount) > 100 &&!enteredAmount.equals("")) {
-            tvEnteredAmount.setAlpha(.9f);
-        } else {
-            tvEnteredAmount.setAlpha(.1f);
-        }*/
 
-        tvEnteredAmount.setAlpha(.1f);
-
-        rupeeAdapter = new RupeeAdapter(getList(), this);
+        rupeeAdapter = new RupeeAdapter(getRupeeList(), this);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(rupeeAdapter);
         rupeeAdapter.setClickListener(this);
 
+        tvEnteredAmount.setAlpha(0.1f);
+
+        etEnteredAmount.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if (s.length() > 3) {
+                    tvEnteredAmount.setAlpha(0.9f);
+                } else {
+                    tvEnteredAmount.setAlpha(0.1f);
+                }
+
+
+            }
+        });
     }
 
-    private List<RupeeModel> getList() {
+    private List<RupeeModel> getRupeeList() {
         List<RupeeModel> rupeeModelList = new ArrayList<>();
-        rupeeModelList.add(new RupeeModel("500"));
         rupeeModelList.add(new RupeeModel("1000"));
         rupeeModelList.add(new RupeeModel("2000"));
+        rupeeModelList.add(new RupeeModel("3000"));
         rupeeModelList.add(new RupeeModel("4000"));
         rupeeModelList.add(new RupeeModel("5000"));
         rupeeModelList.add(new RupeeModel("6000"));
@@ -76,20 +93,16 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
     @Override
     public void onItemClick(View view, int position) {
         if (view != null) {
-            String amount = getList().get(position).getRupeeText();
+            RupeeModel selectedRupee = getRupeeList().get(position);
+            String amount = selectedRupee.getRupeeText();
             etEnteredAmount.setText(amount);
             int enteredAmount = Integer.parseInt(amount);
-            if (enteredAmount > 100) {
-                tvEnteredAmount.setAlpha(.9f);
-            } else {
-                tvEnteredAmount.setAlpha(.1f);
-            }
+            tvEnteredAmount.setAlpha(enteredAmount > 100 ? 0.9f : 0.1f);
             Toast.makeText(this, "Your amount is " + amount, Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onClick(View v) {
-
     }
 }
