@@ -14,7 +14,6 @@ public abstract class UserDatabase extends RoomDatabase {
 
     private static volatile UserDatabase INSTANCE;
     public abstract UserDao getDao();
-
     public static UserDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (UserDatabase.class) {

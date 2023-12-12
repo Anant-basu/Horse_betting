@@ -41,14 +41,11 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
         recyclerView = findViewById(R.id.rv_rupee);
         etEnteredAmount = findViewById(R.id.et_entered_amount);
         tvEnteredAmount = findViewById(R.id.tv_entered_amount);
-
         rupeeAdapter = new RupeeAdapter(getRupeeList(), this);
-
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(rupeeAdapter);
         rupeeAdapter.setClickListener(this);
-
         tvEnteredAmount.setAlpha(0.1f);
 
         etEnteredAmount.addTextChangedListener(new TextWatcher() {
@@ -56,12 +53,9 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
             @Override
             public void afterTextChanged(Editable s) {
             }
-
             @Override
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
@@ -70,12 +64,9 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
                 } else {
                     tvEnteredAmount.setAlpha(0.1f);
                 }
-
-
             }
         });
     }
-
     private List<RupeeModel> getRupeeList() {
         List<RupeeModel> rupeeModelList = new ArrayList<>();
         rupeeModelList.add(new RupeeModel("1000"));
@@ -86,10 +77,8 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
         rupeeModelList.add(new RupeeModel("6000"));
         rupeeModelList.add(new RupeeModel("7000"));
         rupeeModelList.add(new RupeeModel("8000"));
-
         return rupeeModelList;
     }
-
     @Override
     public void onItemClick(View view, int position) {
         if (view != null) {
@@ -101,7 +90,6 @@ public class WalletActivity extends AppCompatActivity implements OnItemClickList
             Toast.makeText(this, "Your amount is " + amount, Toast.LENGTH_SHORT).show();
         }
     }
-
     @Override
     public void onClick(View v) {
     }

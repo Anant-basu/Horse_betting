@@ -21,11 +21,12 @@ import java.util.List;
 
 public class ForgetPasswordActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etForgetPassword, etConfirmPassword;
-    private TextView btnPasswordChange;
+    private EditText etChangePassword, etConfirmPassword;
+    private TextView btnChangePassword;
     private UserDatabase userDatabase;
-    private SharedPreferences sharedPreferences;
     private UserDao userDao;
+    private SharedPreferences sharedPreferences;
+    private static final String PREFS_KEY = "prefs";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,26 +37,28 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
     }
 
     private void initComponents() {
-        etForgetPassword = findViewById(R.id.et_change_password);
+        etChangePassword = findViewById(R.id.et_change_password);
         etConfirmPassword = findViewById(R.id.et_confirm_password);
-        btnPasswordChange = findViewById(R.id.tv_change_password);
+        btnChangePassword = findViewById(R.id.tv_change_password);
 
         userDatabase = UserDatabase.getInstance(this);
         userDao = userDatabase.getDao();
 
-        btnPasswordChange.setOnClickListener(this);
+        btnChangePassword.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_change_password) {
-            String changePassword = etForgetPassword.getText().toString();
+            String changePassword = etChangePassword.getText().toString();
             String confirmPassword = etConfirmPassword.getText().toString();
-            sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE);
+            sharedPreferences = getSharedPreferences(PREFS_KEY, MODE_PRIVATE);
             String userId = sharedPreferences.getString("user_id", "");
 
-            if (!changePassword.equals(confirmPassword)) {
-                showToast("Check your password");
+            if (changePassword.isEmpty() || confirmPassword.isEmpty()) {
+                showToast("Please enter both passwords");
+            } else if (!changePassword.equals(confirmPassword)) {
+                showToast("Passwords do not match");
             } else {
                 List<User> userList = userDao.getAllData();
                 if (!userList.isEmpty()) {
@@ -79,7 +82,6 @@ public class ForgetPasswordActivity extends AppCompatActivity implements View.On
             }
         }
     }
-
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }

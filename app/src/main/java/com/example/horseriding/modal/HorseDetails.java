@@ -5,6 +5,7 @@ public class HorseDetails {
     private String horseHeight;
     private String horseWeight;
     private String horseDescription;
+
     public HorseDetails(String horseName, int horseImage, String horseHeight, String horseWeight, String horseDescription) {
         this.horseName = horseName;
         this.horseImage = horseImage;

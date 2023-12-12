@@ -40,7 +40,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             app:passwordToggleDrawable="@color/white"
-            app:passwordToggleEnabled="true" />
+            app:passwordToggleEnabled="true"/>
 
         <EditText
             android:id="@+id/et_confirm_password"
@@ -55,7 +55,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             app:passwordToggleEnabled="true"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"/>
 
         <TextView
             android:id="@+id/tv_change_password"
@@ -71,7 +71,7 @@
             android:paddingVertical="10sp"
             android:text="@string/change_your_password"
             android:textColor="@color/white"
-            android:textSize="10sp" />
+            android:textSize="10sp"/>
 
     </LinearLayout>
 </LinearLayout>
